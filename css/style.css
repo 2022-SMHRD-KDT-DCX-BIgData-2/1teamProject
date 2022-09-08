@@ -1,0 +1,280 @@
+/*css 초기화*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+/*header*/
+
+header {
+  width: 100%;
+  position: relative;
+  position: fixed;
+  z-index: 1001;
+}
+#main_header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 130px;
+  align-items: center;
+  background-color: white;
+  /* position: fixed; */
+  z-index: 1001;
+}
+#Search_bar {
+  height: 50px;
+  width: 500px;
+  border-radius: 10px;
+  border: 2px solid #ff7200;
+  padding: 0px 38px;
+  margin-left: 30px;
+  font-size: 16px;
+}
+.search-icon {
+  position: relative;
+  right: 35px;
+}
+.main_logo {
+  width: 150px;
+  height: 100px;
+}
+
+#login_sign > a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0px 10px;
+}
+.cart-icon {
+  position: relative;
+  right: 10px;
+}
+/*navbar*/
+
+#navber {
+  display: flex;
+  margin: 0 auto;
+  width: 1440px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: hsl(32, 94%, 93%);
+  box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
+  height: 50px;
+  z-index: 1000;
+}
+
+.menu_item {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  transition: all 1s;
+}
+.menu_item:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#menu_bar {
+  width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+}
+#menu {
+  position: absolute;
+  background-color: #e6e6e6;
+  display: none;
+  width: 200px;
+  height: 500px;
+  margin-left: 100px;
+  z-index: 1000;
+}
+
+#menu > li:hover {
+  background-color: gray;
+}
+
+#menu > li {
+  display: flex;
+}
+/* .add_menu:hover + div {
+  opacity: 1;
+} */
+/*banner*/
+#container {
+  padding-top: 180px;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+#banner {
+  width: 100%;
+  height: 370px;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bannerBox {
+  width: 1080px;
+  overflow: hidden;
+}
+
+#bannerBox > ul {
+  list-style: none;
+  width: 1080px;
+  height: 370px;
+  transition: all 1s;
+  display: inline-flex;
+}
+
+#bannerBox > ul > li {
+  min-width: 1080px;
+  min-height: 370px;
+  text-align: center;
+  color: #000;
+}
+
+#bannerBox > ul > li:first-child {
+  background-color: orange;
+}
+
+#bannerBox > ul > li:nth-child(2) {
+  background-color: #ad2324;
+}
+
+#bannerBox > ul > li:nth-child(3) {
+  background-color: #cbccdb;
+}
+
+#bannerBox > ul > li:last-child {
+  background-color: #faa234;
+}
+
+#prevBtn,
+#nextBtn {
+  cursor: pointer;
+  border: 1px solid #adff2f;
+  width: 3rem;
+  height: 3rem;
+  z-index: 999;
+}
+/*main contents*/
+#main_container {
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
+.main_title {
+  margin: 0 auto;
+  width: 210px;
+  height: 80px;
+  line-height: 100px;
+  text-align: center;
+  background-color: white;
+  font-size: 2em;
+  border-bottom: 3px solid #ff7200;
+}
+.main_contents {
+  margin: 0 auto;
+  display: flex;
+  width: 1080px;
+  height: 450px;
+  background-color: whitesmoke;
+  align-items: center;
+  justify-content: space-around;
+}
+.main_item {
+  width: 280px;
+  height: 370px;
+  border: 1px solid gray;
+  transition: all 1s;
+}
+
+/*footer*/
+
+#main_footer {
+  border-top: 1px solid #cbccdb;
+  width: 100%;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.footer_box {
+  padding: 35px 30px;
+  text-align: left;
+  height: 250px;
+  margin-right: 50px;
+}
+.footer_box > div {
+  padding: 5px;
+}
+.footer_box > div:first-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+.footer_box > div:nth-child(2) {
+  font-size: 20px;
+}
+.footer_box > div:nth-child(3) {
+  font-size: 18px;
+}
+#team_name > div {
+  font-size: 16px;
+  margin: 5px;
+}
+.icon_style {
+  padding: 35px 30px;
+
+  text-align: left;
+  height: 250px;
+}
+.icon_style > a {
+  font-size: 30px;
+  margin-left: 15px;
+}
+.icon_style > a:first-child {
+  color: blue;
+}
+.icon_style > a:nth-child(2) {
+  color: black;
+}
+.icon_style > a:nth-child(3) {
+  color: red;
+}
+.icon_style > a:nth-child(4) {
+  color: rgb(251, 251, 33);
+}
+
+@media screen {
+}
+/*페이지 맨위로 */
+#page_up {
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 70px;
+  background-color: #cbccdb;
+  position: fixed;
+  right: 100px;
+  bottom: 50px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 1s;
+}
+#hide_menu {
+  display: none;
+}
