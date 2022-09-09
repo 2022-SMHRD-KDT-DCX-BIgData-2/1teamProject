@@ -16,18 +16,6 @@ menu.addEventListener("mouseleave", () => {
   }
 });
 
-const add_menu = document.getElementsByClassName("add_menu");
-const add_menu_list = document.getElementsByClassName("add_menu_list");
-
-for (let i = 0; i < document.getElementsByClassName("add_menu").length; i++) {
-  add_menu[i].addEventListener("mouseover", () => {
-    add_menu_list[i].style.opacity = "1";
-  });
-  add_menu[i].addEventListener("mouseout", () => {
-    add_menu_list[i].style.opacity = "0";
-  });
-}
-
 const pagecontroller = document.getElementById("page_up");
 let ScorllY = 380;
 
