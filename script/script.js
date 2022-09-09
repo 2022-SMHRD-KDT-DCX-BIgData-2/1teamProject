@@ -96,3 +96,5 @@ let banner = setInterval(() => {
   }
 }, 5000);
 //1000ms = 1초
+
+//히히 확인
