@@ -1,6 +1,6 @@
 const hover_event = document.getElementById("hover_event");
 const menu = document.getElementById("menu");
-hover_event.addEventListener("click", () => {
+hover_event.addEventListener("mouseover", () => {
   if (menu.style.display === "block") {
     menu.style.display = "none";
   } else {

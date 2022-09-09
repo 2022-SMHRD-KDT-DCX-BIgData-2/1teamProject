@@ -8,7 +8,9 @@
 li {
   list-style: none;
 }
-
+a {
+  text-decoration: none;
+}
 /*header*/
 
 header {
@@ -21,20 +23,20 @@ header {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 130px;
+  height: 140px;
   align-items: center;
   background-color: white;
   /* position: fixed; */
   z-index: 1001;
 }
 #Search_bar {
-  height: 50px;
+  height: 55px;
   width: 500px;
   border-radius: 10px;
   border: 2px solid #ff7200;
   padding: 0px 38px;
   margin-left: 30px;
-  font-size: 16px;
+  font-size: 18px;
 }
 .search-icon {
   position: relative;
@@ -48,7 +50,7 @@ header {
 #login_sign > a {
   color: black;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0px 10px;
 }
 .cart-icon {
@@ -63,7 +65,7 @@ header {
   width: 1440px;
   justify-content: space-around;
   align-items: center;
-  background-color: hsl(32, 94%, 93%);
+  background-color: hsl(23, 87%, 97%);
   box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
   height: 50px;
   z-index: 1000;
@@ -76,8 +78,7 @@ header {
   transition: all 1s;
 }
 .menu_item:hover {
-  color: black;
-  text-decoration: underline;
+  color: gray;
 }
 
 #menu_bar {
@@ -87,16 +88,22 @@ header {
 }
 #menu {
   position: absolute;
-  background-color: #e6e6e6;
+  background-color: #fff;
   display: none;
-  width: 200px;
-  height: 500px;
+  width: 250px;
+  height: 550px;
   margin-left: 100px;
+  padding: 15px;
   z-index: 1000;
 }
-
+.add_menu {
+  padding-bottom: 10px;
+  padding: 5px;
+  text-align: left;
+  color: black;
+}
 #menu > li:hover {
-  background-color: gray;
+  background-color: rgb(212, 210, 210);
 }
 
 #menu > li {
@@ -253,7 +260,7 @@ header {
   color: red;
 }
 .icon_style > a:nth-child(4) {
-  color: rgb(251, 251, 33);
+  color: rgba(231, 231, 7, 0.948);
 }
 
 @media screen {
@@ -262,13 +269,15 @@ header {
 #page_up {
   width: 70px;
   height: 70px;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   border-radius: 50%;
   text-align: center;
   line-height: 70px;
-  background-color: #cbccdb;
+  background-color: white;
+  color: black;
+  font-weight: 600;
   position: fixed;
-  right: 100px;
+  right: 40px;
   bottom: 50px;
   cursor: pointer;
   opacity: 0;

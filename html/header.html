@@ -1,43 +1,51 @@
 <header>
-    <div id="main_header">
-      <div id="logo"><a href="#"><img src="../image/logo.png" class="main_logo" alt="main_log"></a></div>
-      <div id="Search">
-        <input type="text" name="Search_bar" id="Search_bar" placeholder="검색어를 입력해주세요"/>
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-      </div>
-      <div id="login_sign">
-        <a href="#">로그인</a>
-        <a href="#"> 회원가입</a>
-        <a href="#">관심상품</a>
-        <i class="fa-solid fa-cart-shopping cart-icon"></i>
-      </div>
+  <div id="main_header">
+    <div id="logo"><a href="mainPage.html"><img src="../image/logo.png" class="main_logo" alt="main_log"></a></div>
+    <div id="Search">
+      <input type="text" name="Search_bar" id="Search_bar" placeholder="검색어를 입력해주세요"/>
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
     </div>
-    <navbar id="navber">
-      <div id="hover_event" class="menu_item" >카테고리
-      </div>
-      <div class="menu_item">
-          최저가
-        </ul>
-      </div>
-      <div class="menu_item">
-          신상품
-        </ul>
-      </div>
-      <div class="menu_item">
-          베스트 추천
-        </ul>
-      </div>
-    </navbar>
-    <div id="menu_bar">
-      <ul id="menu">
-        <li><div class="add_menu">카테고리1</div></li>
-        <li><div class="add_menu">카테고리2</div></li>
-        <li><div class="add_menu">카테고리3</div></li>
-        <li><div class="add_menu">카테고리4</div></li>
-        <li><div class="add_menu">카테고리5</div></li>
-        <li><div class="add_menu">카테고리6</div></li>
-        <li><div class="add_menu">카테고리7</div></li>
-        <li><div class="add_menu">카테고리8</div></li>
-    </ul>
+    <div id="login_sign">
+      <a href="loginPage.html">로그인</a>
+      <a href="create.html"> 회원가입</a>
+      <a href="#">관심상품</a>
+      <i class="fa-solid fa-cart-shopping cart-icon"></i>
     </div>
-  </header>
+  </div>
+  <button id="page_up" onclick="window.scrollTo(0, 0)">맨위로</button>
+  <navbar id="navber">
+    <a href = "" id="hover_event" class="menu_item" ><i class="fa-solid fa-bars"></i> &nbsp;&nbsp;카테고리
+    </a>
+    <div class="menu_item">
+        최저가
+      </ul>
+    </div>
+    <div class="menu_item">
+        신상품
+      </ul>
+    </div>
+    <div class="menu_item">
+        베스트 추천
+      </ul>
+    </div>
+  </navbar>
+  <div id="menu_bar">
+    <ul id="menu">
+      <a href=""><li><div class="add_menu">과일</div></li></a>
+      <a href=""><li><div class="add_menu">채소</div></li></a>
+      <a href=""><li><div class="add_menu">쌀/잡곡/견과</div></li></a>
+      <a href=""><li><div class="add_menu">정육/계란</div></li></a>
+      <a href=""><li><div class="add_menu">수산/건해산물</div></li></a>
+      <a href=""><li><div class="add_menu">냉장/냉동/밀키트</div></li></a>
+      <a href=""><li><div class="add_menu">우유/유제품/베이커리</div></li></a>
+      <a href=""><li><div class="add_menu">김치/반찬</div></li></a>
+      <a href=""><li><div class="add_menu">장류/양념/오일</div></li></a>
+      <a href=""><li><div class="add_menu">과자/간식/시리얼/떡</div></li></a>
+      <a href=""><li><div class="add_menu">생수/음료/커피/차</div></li></a>
+      <a href=""><li><div class="add_menu">주류</div></li></a>
+      <a href=""><li><div class="add_menu">라면/통조림/즉석식품</div></li></a>
+      <a href=""><li><div class="add_menu">건강식품</div></li></a>
+      <a href=""><li><div class="add_menu">친환경/유기농</div></li></a>
+  </ul>
+  </div>
+</header>
