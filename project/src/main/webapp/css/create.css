@@ -1,0 +1,94 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#header {
+  position: fixed;
+}
+main {
+  top: 380px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.smallbox1 {
+  width: 100px;
+}
+.bigbox1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  margin-top: 30px;
+}
+.bigbox2 {
+  display: flex;
+  margin: 3px;
+  margin-left: 40px;
+  height: 50px;
+  line-height: 50px;
+  padding: 5px;
+}
+.inputBox {
+  width: 420px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  margin: 5px 0px;
+  font-size: 16px;
+  border: 1px solid rgb(221, 221, 221);
+}
+.bigbox2 > div {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 17px;
+}
+.idBtn {
+  padding: 7px 10px;
+  background-color: #0d6734;
+  /*opacity: 0.6;*/
+  border: 1px solid #0d6734;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+}
+.idBtn:hover {
+  color: rgb(250, 231, 209);
+}
+.loginBtn > button {
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  margin: 35px 165px;
+
+  background-color: #0d6734;
+  /*opacity: 0.6;*/
+  border: 1px solid #0d6734;
+  border-radius: 4px;
+  font-size: 19px;
+  font-weight: 400;
+  color: white;
+}
+.loginBtn > button:hover {
+  color: rgb(250, 231, 209);
+}
+#create {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 25px;
+  width: 800px;
+  border-bottom: 2px solid #cbccdb;
+}
+.emailBox {
+  width: 200px;
+  font-size: 16px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  margin: 5px 0px;
+  border: 1px solid rgb(221, 221, 221);
+}
