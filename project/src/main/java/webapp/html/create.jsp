@@ -31,6 +31,7 @@
       <div id="header"></div>
     </header>
     <main>
+    <form method= "post" action= "createAction.jsp">
       <div class="bigbox1">
         <div id="create">회원가입</div>
         <div class="bigbox2">
@@ -98,15 +99,13 @@
             <select
               name="email_sel"
               id="email_sel"
-              style="font-size: 16px; height: 30px"
-              onchange="change_email();"
-            >
-              <option value="">직접입력</option>
-              <option value="naver.com">naver.com</option>
-              <option value="hanmail.net">hanmail.net</option>
-              <option value="gmail.com">gmail.com</option>
-              <option value="nate.com">nate.com</option>
-              <option value="kakao.com">kakao.com</option>
+              style="font-size: 16px; height: 30px" onchange= "Change_email();">
+              	<option value="">직접입력</option>
+              	<option value="naver.com">naver.com</option>
+              	<option value="hanmail.net">hanmail.net</option>
+              	<option value="gmail.com">gmail.com</option>
+              	<option value="nate.com">nate.com</option>
+              	<option value="kakao.com">kakao.com</option>
             </select>
           </div>
         </div>
@@ -125,6 +124,7 @@
           <button type="submit">회원가입</button>
         </div>
       </div>
+      </form>
       <footer id="main_footer">
         <div class="footer_box">
           <div>
