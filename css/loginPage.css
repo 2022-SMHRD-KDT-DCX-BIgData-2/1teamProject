@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* main */
+main {
+  top: 200px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.bigbox {
+  top: 250px;
+  height: 550px;
+  width: 100%;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://i.pinimg.com/564x/89/7b/6c/897b6ce3ef63ffa879db6e39976e6139.jpg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+form {
+  width: 300px;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+.login {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 20px;
+  padding-bottom: 20px;
+  color: white;
+}
+.inputBox {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin: 7px 0px;
+  font-size: 16px;
+  border: 1px solid rgb(221, 221, 221);
+}
+.find {
+  margin: 5px 0px;
+  text-align: right;
+}
+.find > a {
+  font-size: 15px;
+  right: 0px;
+  color: white;
+}
+.find > a:hover {
+  color: orange;
+}
+
+.loginBtn > button {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px 0px;
+  background-color: #0d6734;
+  /*opacity: 0.6;*/
+  border: 1px solid #0d6734;
+  border-radius: 4px;
+  font-size: 18px;
+  color: white;
+}
+#navber {
+  background-color: hsl(32, 94%, 93%);
+  height: 50px;
+}

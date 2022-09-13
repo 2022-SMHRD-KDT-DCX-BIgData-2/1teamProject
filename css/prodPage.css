@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#main_box {
+  display: flex;
+  justify-content: center;
+  padding-top: 240px;
+}
+.article {
+  display: flex;
+  background-color: rgb(252, 249, 244);
+  padding: 50px 100px;
+}
+#main_box2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5em;
+}
+#main_box2 > div {
+  font-size: 25px;
+  margin: 20px 0px;
+}
+.main_title {
+  height: 80px;
+  width: 250px;
+  margin-bottom: 70px;
+  border-bottom: 4px solid green;
+  text-align: center;
+  font-size: 35px;
+  line-height: 80px;
+}
+#prodImg {
+  width: 500px;
+  height: 600px;
+  background-image: url(https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1599107900298l0.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
