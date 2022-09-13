@@ -127,6 +127,9 @@ header {
   align-items: center;
   justify-content: center;
 }
+.banner_item{
+  height: 370px;
+}
 
 #bannerBox {
   width: 1080px;
@@ -149,15 +152,24 @@ header {
 }
 
 #bannerBox > ul > li:first-child {
-  background-color: orange;
+  background-image: url(/image/background1.jpg);
+  background-repeat: no-repeat;
+  background-size: 177%;
+  background-position: center;
 }
 
 #bannerBox > ul > li:nth-child(2) {
-  background-color: #ad2324;
+  background-image: url(/image/background2.jpg);
+  background-repeat: no-repeat;
+  background-size: 177%;
+  background-position: center; 
 }
 
 #bannerBox > ul > li:nth-child(3) {
-  background-color: #cbccdb;
+  background-image: url(/image/background3.jpg);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center; 
 }
 
 #bannerBox > ul > li:last-child {
@@ -262,9 +274,6 @@ header {
 .icon_style > a:nth-child(4) {
   color: rgba(231, 231, 7, 0.948);
 }
-
-@media screen {
-}
 /*페이지 맨위로 */
 #page_up {
   width: 70px;
@@ -285,4 +294,116 @@ header {
 }
 #hide_menu {
   display: none;
+}
+
+
+@media screen and (min-width:768px) and (max-width:1440px){
+  #Search_bar {
+    height: 55px;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid #ff7200;
+    padding: 0px 25px;
+    margin-left: 30px;
+    font-size: 15px;
+  }
+  #login_sign > a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 0px 10px;
+  }
+  #navber {
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsl(23, 87%, 97%);
+    box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
+    height: 50px;
+  }
+  #container {
+    padding-top: 180px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #main_container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  .main_contents {
+    width: 100%;
+    height: 450px;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #main_header {
+    width: 100%;
+    height: 140px;
+    align-items: center;
+    background-color: white;
+    /* position: fixed; */
+  }
+  #bannerBox > ul > li {
+    min-width: 750px;
+    min-height: 370px;
+    text-align: center;
+    color: #000;
+  }
+  #bannerBox {
+    width: 100%;
+    overflow: hidden;
+  }
+  .banner_item{
+    width: 100%;
+    text-align: center;
+  }
+  .main_item {
+    width: 220px;
+    height: 300px;
+    border: 1px solid gray;
+    transition: all 1s;
+  }
+  #main_footer {
+    width: 100%;
+    padding-left: 20px;
+  }
+  .footer_box{
+    padding: 0px 1px;
+    margin-top: 70px;
+  }
+  .footer_box > div:first-child {
+    font-size: 15px;
+  }
+  .footer_box > div {
+    padding: 5px;
+    font-size: 15px;
+  }
+  .footer_box > div:first-child {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .footer_box > div:nth-child(2) {
+    font-size: 14px;
+  }
+  .footer_box > div:nth-child(3) {
+    font-size: 14px;
+  }
+  #team_name > div {
+    font-size: 13px;
+    width: 35%;
+    margin: 2px;
+  }
+  .icon_style {
+    padding-top: 70px;
+    text-align: left;
+    height: 250px;
+    width: 200px;
+  }
+  .icon_style > a {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
 }
