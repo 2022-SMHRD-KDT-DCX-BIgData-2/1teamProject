@@ -31,7 +31,7 @@
       <div id="header"></div>
     </header>
     <main>
-    <form method= "post" action= "createAction.jsp">
+    <form method= "post" action= "../createAction.jsp">
       <div class="bigbox1">
         <div id="create">회원가입</div>
         <div class="bigbox2">
@@ -99,7 +99,7 @@
             <select
               name="email_sel"
               id="email_sel"
-              style="font-size: 16px; height: 30px" onchange= "Change_email();">
+              style="font-size: 16px; height: 30px" onchange="change_email();">
               	<option value="">직접입력</option>
               	<option value="naver.com">naver.com</option>
               	<option value="hanmail.net">hanmail.net</option>
@@ -113,10 +113,10 @@
           <div class="smallbox1"><label>휴대폰</label></div>
           <div>
             <input
-              type="number"
+              type="text"
               name="phone"
               class="inputBox"
-              placeholder="숫자만 입력해주세요"
+              placeholder="전화번호입력해주세요"
             />
           </div>
         </div>
@@ -158,8 +158,6 @@
         </div>
       </footer>
     </main>
-    <script src="../script/script.js"></script>
     <script src="../script/change_email.js"></script>
-    <script id="import2"></script>
   </body>
 </html>

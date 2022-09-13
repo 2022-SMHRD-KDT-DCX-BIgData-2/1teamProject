@@ -4,8 +4,8 @@
 <%@ page import= "java.io.PrintWriter"%>
 <%request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id= "dto" class= "com.client.MemberDTO" scope= "page"/>
-<jsp:setProperty name= "dto" property= "Userid"/>
-<jsp:setProperty name= "dto" property= "Pwd"/>
+<jsp:setProperty name= "dto" property= "userid"/>
+<jsp:setProperty name= "dto" property= "pwd"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +18,9 @@
 	int result= member.login(dto.getUserid(), dto.getPwd());//오류가 있는데 모르겠어요
 	if (result ==1){
 		PrintWriter script = response.getWriter();
+		session.setAttribute("userid", dto.getUserid());
 		script.println("<script>");
-		script.println("location.href = 'mainPage.jsp'");// 매인 페이지
+		script.println("location.href = './html/mainPage.jsp'");// 매인 페이지
 		script.println("</script>");
 	}
 	else if (result ==0){

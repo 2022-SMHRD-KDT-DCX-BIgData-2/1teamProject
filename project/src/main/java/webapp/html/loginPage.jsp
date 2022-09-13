@@ -32,8 +32,23 @@
     </header>
     <main>
       <div class="bigbox">
-        <form>
+        <form action="../loginAction.jsp" method="post">
           <div class="login">로그인</div>
+          <%
+			String userid =null;
+			if(session.getAttribute("userid")!=null){
+				userid = (String)session.getAttribute("userid");
+          %>
+	          <div>
+	            <input
+	              type="text"
+	              name="userid"
+	              class="inputBox"
+	              placeholder="아이디를 입력하세요"
+	              value="<%=userid %>"
+	            />
+	          </div>
+          <%}else{ %>
           <div>
             <input
               type="text"
@@ -42,10 +57,11 @@
               placeholder="아이디를 입력하세요"
             />
           </div>
+          <%} %>
           <div>
             <input
               type="password"
-              name="pw"
+              name="pwd"
               class="inputBox"
               placeholder="비밀번호를 입력하세요"
             />
@@ -65,7 +81,7 @@
       <div class="footer_box">
         <div>
           스마트인재 개발원<span style="font-size: 18px">
-            tel ) 070-4120-6295</span
+            tell ) 070-4120-6295</span
           >
         </div>
         <div>K-Digital Training</div>
@@ -93,6 +109,7 @@
         <a href=""><i class="fa-brands fa-square-js"></i></a>
       </div>
     </footer>
-    <script src="../script/script.js"></script>
+   
+   
   </body>
 </html>

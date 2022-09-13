@@ -72,6 +72,6 @@
     <a href=""><i class="fa-brands fa-square-js"></i></a>
   </div>
 </footer>
-    <script src="../script/script.js"></script>
+
   </body>
 </html>
