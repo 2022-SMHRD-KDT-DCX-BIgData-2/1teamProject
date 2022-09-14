@@ -43,8 +43,9 @@
       </div>
       <% ProductDAO dao = new ProductDAO();
 	      int[] randomlist = new int[12];
+	      int len = dao.productAll().size();
 	      for(int i = 0 ;i<randomlist.length;i++){
-	      	int a = (int)(Math.random()*30000);
+	      	int a = (int)(Math.random()*len);
 	      	randomlist[i] = a;
 	      }
 	      String title[] = {"이 상품 어때요?","Query 추천상품","이것만 담아도 장바구니 뚝딱!","수고했어 오늘도"};

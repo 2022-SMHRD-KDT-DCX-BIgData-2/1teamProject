@@ -63,15 +63,18 @@
       <section id="main_container">
           <div class="main_contents">
             <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
-            <p><%=list.get(i).getProdName()%><p>
-            <p><%=list.get(i).getProdPrice()%><p>
+            <p><%=list.get(i).getMartName()%></p>
+            <p><%=list.get(i).getProdName()%></p>
+            <p><%=list.get(i).getProdPrice()%></p>
             </div>
             <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
-            <p><%=list.get(i+1).getProdName()%><p>
-            <p><%=list.get(i+1).getProdPrice()%><p></div>
+            <p><%=list.get(i+1).getMartName()%></p>
+            <p><%=list.get(i+1).getProdName()%></p>
+            <p><%=list.get(i+1).getProdPrice()%></p></div>
             <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
-            <p><%=list.get(i+2).getProdName()%><p>
-            <p><%=list.get(i+2).getProdPrice()%><p>
+            <p><%=list.get(i+2).getMartName()%></p>
+            <p><%=list.get(i+2).getProdName()%></p>
+            <p><%=list.get(i+2).getProdPrice()%></p>
             </div>
           </div>
       </section>
@@ -81,13 +84,16 @@
           <section id="main_container">
               <div class="main_contents">
                 <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
+                <p><%=list.get(i).getMartName()%><p>
                 <p><%=list.get(i).getProdName()%><p>
                 <p><%=list.get(i).getProdPrice()%><p>
                 </div>
                 <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
+                <p><%=list.get(i+1).getMartName()%><p>
                 <p><%=list.get(i+1).getProdName()%><p>
                 <p><%=list.get(i+1).getProdPrice()%><p></div>
                 <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
+                <p><%=list.get(i+2).getMartName()%><p>
                 <p><%=list.get(i+2).getProdName()%><p>
                 <p><%=list.get(i+2).getProdPrice()%><p>
                 </div>
