@@ -72,8 +72,7 @@
             <a href="categoryPage.jsp?categoryName=김치/반찬"><li><div class="add_menu">김치/반찬</div></li></a>
             <a href="categoryPage.jsp?categoryName=장류/양념/오일"><li><div class="add_menu">장류/양념/오일</div></li></a>
             <a href="categoryPage.jsp?categoryName=과자/간식/시리얼/떡"><li><div class="add_menu">과자/간식/시리얼/떡</div></li></a>
-            <a href="categoryPage.jsp?categoryName=생수/음료/커피/차"><li><div class="add_menu">생수/음료/커피/차</div></li></a>
-            <a href="categoryPage.jsp?categoryName=주류"><li><div class="add_menu">주류</div></li></a>
+            <a href="categoryPage.jsp?categoryName=생수/음료/커피/차/주류"><li><div class="add_menu">생수/음료/커피/차/주류</div></li></a>
             <a href="categoryPage.jsp?categoryName=라면/통조림/즉석식품"><li><div class="add_menu">라면/통조림/즉석식품</div></li></a>
             <a href="categoryPage.jsp?categoryName=건강식품"><li><div class="add_menu">건강식품</div></li></a>
             <a href="categoryPage.jsp?categoryName=친환경/유기농"><li><div class="add_menu">친환경/유기농</div></li></a>

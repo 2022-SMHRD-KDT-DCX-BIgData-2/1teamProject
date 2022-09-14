@@ -263,6 +263,17 @@ header {
   color: rgba(231, 231, 7, 0.948);
 }
 
+<!--페이지네이션-->
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  font-size: 20px;
+}
+.page-link {
+  padding-left: 10px;
+}
+
 @media screen {
 }
 /*페이지 맨위로 */

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <%@ page import="java.util.*" %>
+    <%@page import="com.product.ProductDAO" %>
+    <%@page import="com.product.ProductDTO" %>
+    <%@page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="en">
 <%
@@ -7,6 +11,14 @@
 	if(request.getParameter("categoryName")!=null){
 		categoryName = (String)request.getParameter("categoryName");
 	}
+	String pageNum = null;
+	int pageint = 1;
+	if(request.getParameter("pageNum") !=null){
+		pageNum = (String)request.getParameter("pageNum");
+		pageint = Integer.parseInt(pageNum);
+	}
+	
+	
 %>
   <head>
     <meta charset="UTF-8" />
@@ -41,41 +53,72 @@
         <div class="main_title"><%=categoryName %></div>
       </div>
     </main>
-    <section id="main_container">
-      <div class="main_contents">
-        <div class="main_item"><img src="" />상품이미지</div>
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-      </div>
-    </section>
-    <section id="main_container">
-      <div class="main_contents">
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-      </div>
-    </section>
-    <section id="main_container">
-      <div class="main_contents">
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-      </div>
-    </section>
-    <section id="main_container">
-      <div class="main_contents">
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-      </div>
-    </section>
-    <section id="main_container">
-      <div class="main_contents">
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-      </div>
-    </section>
+    
+     <% ProductDAO dao = new ProductDAO();
+     	ArrayList<ProductDTO> list = dao.productList(categoryName);
+	      System.out.println(categoryName);
+	   try{
+	    if(pageint == 1){  
+	      for(int i = 0 ; i< 97;i+=3){%>
+      <section id="main_container">
+          <div class="main_contents">
+            <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
+            <p><%=list.get(i).getProdName()%><p>
+            <p><%=list.get(i).getProdPrice()%><p>
+            </div>
+            <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
+            <p><%=list.get(i+1).getProdName()%><p>
+            <p><%=list.get(i+1).getProdPrice()%><p></div>
+            <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
+            <p><%=list.get(i+2).getProdName()%><p>
+            <p><%=list.get(i+2).getProdPrice()%><p>
+            </div>
+          </div>
+      </section>
+      <%}
+	    }else{
+    	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
+          <section id="main_container">
+              <div class="main_contents">
+                <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
+                <p><%=list.get(i).getProdName()%><p>
+                <p><%=list.get(i).getProdPrice()%><p>
+                </div>
+                <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
+                <p><%=list.get(i+1).getProdName()%><p>
+                <p><%=list.get(i+1).getProdPrice()%><p></div>
+                <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
+                <p><%=list.get(i+2).getProdName()%><p>
+                <p><%=list.get(i+2).getProdPrice()%><p>
+                </div>
+              </div>
+          </section>
+      <% }}%>
+   <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <%
+      	System.out.print(list.size()/100);
+      	for(int j = 1;j<(list.size()/100);j++){
+      %>
+      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+	<%}
+      	}catch(Exception e){%>
+      		 </div>
+          </section>
+          <style></style>
+      	<% }%>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
     <footer id="main_footer">
       <div class="footer_box">
         <div>
