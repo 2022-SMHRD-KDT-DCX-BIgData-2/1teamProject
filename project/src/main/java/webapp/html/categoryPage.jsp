@@ -166,17 +166,24 @@
             		<%}
           	}
       	}else{
-      		if (pageint/10 == list_length/10){
+      		 if((pageint%10 != 0)&&(pageint/10 == list_length/10)){
+          		int last = pageint/10*10;
+          		for(int j = last ;j< last+list_length%10;j++){
+            	      %>
+            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+            		<%}
+          	}
+      		 else if (pageint/10 == list_length/10){
           		for(int j = pageint ;j< pageint + list_length%10 ;j++){
           	      %>
           	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
           		<%}
           	}else{
           		for(int j = pageint ;j< 10+pageint;j++){
-            	      %>
-            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
-            		<%}
-          	}
+          	      %>
+          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+          		<%}
+        	}
       	}
        %>
       <li class="page-item">
