@@ -31,7 +31,7 @@
       <div id="header"></div>
     </header>
     <main>
-    <form method= "post" action= "../createAction.jsp">
+        <form name= "memberForm" method= "post" action= "../createAction.jsp">
       <div class="bigbox1">
         <div id="create">회원가입</div>
         <div class="bigbox2">
@@ -53,21 +53,28 @@
               type="password"
               name="pwd"
               class="inputBox"
-              placeholder="비밀번호를 입력해주세요"
+              id= "pwd"
+              placeholder="비밀번호를 입력해주세요"                        
             />
-          </div> 
+          </div>
         </div>
         <div class="bigbox2">
           <div class="smallbox1"><label>비밀번호 확인</label></div>
           <div>
             <input
               type="password"
-              name="pw2"
+              name="pwd2"
               class="inputBox"
+              id= "pwd2"
               placeholder="비밀번호를 한번 더 입력해주세요"
+              onchange= "pwdCheck();"
             />
           </div>
         </div>
+        <div class="bigbox2">
+        <span id="same" style="font-size: 12px;"></span>
+        </div>
+       </div>
         <div class="bigbox2">
           <div class="smallbox1"><label>이름</label></div>
           <div>
@@ -159,5 +166,6 @@
       </footer>
     </main>
     <script src="../script/change_email.js"></script>
+    <script src="../script/pwdCheck.js"></script>
   </body>
 </html>
