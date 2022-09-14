@@ -65,14 +65,14 @@ header {
   width: 1440px;
   justify-content: space-around;
   align-items: center;
-  background-color: hsl(23, 87%, 97%);
+  background-color: hsl(24, 100%, 98%);
   box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
   height: 50px;
   z-index: 1000;
 }
 
 .menu_item {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   color: black;
   transition: all 1s;
@@ -114,7 +114,8 @@ header {
 } */
 /*banner*/
 #container {
-  padding-top: 180px;
+  padding-top: 240px;
+  padding-bottom: 50px;
   width: 1440px;
   margin: 0 auto;
 }
@@ -122,12 +123,12 @@ header {
 #banner {
   width: 100%;
   height: 370px;
-  background-color: beige;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.banner_item{
+.banner_item {
   height: 370px;
 }
 
@@ -138,20 +139,20 @@ header {
 
 #bannerBox > ul {
   list-style: none;
-  width: 1080px;
-  height: 370px;
+  width: 1100px;
+  height: 380px;
   transition: all 1s;
   display: inline-flex;
 }
 
 #bannerBox > ul > li {
-  min-width: 1080px;
+  min-width: 1100px;
   min-height: 370px;
   text-align: center;
   color: #000;
 }
 
-#bannerBox > ul > li:first-child {
+#bannerBox > ul > li:last-child {
   background-image: url(/image/background1.jpg);
   background-repeat: no-repeat;
   background-size: 177%;
@@ -162,18 +163,21 @@ header {
   background-image: url(/image/background2.jpg);
   background-repeat: no-repeat;
   background-size: 177%;
-  background-position: center; 
+  background-position: center;
 }
 
 #bannerBox > ul > li:nth-child(3) {
   background-image: url(/image/background3.jpg);
   background-repeat: no-repeat;
   background-size: 90%;
-  background-position: center; 
+  background-position: center;
 }
 
-#bannerBox > ul > li:last-child {
-  background-color: #faa234;
+#bannerBox > ul > li:first-child {
+  background-image: url(/image/snack4.jpeg);
+  background-repeat: no-repeat;
+  background-size: 67%;
+  background-position: center;
 }
 
 #prevBtn,
@@ -295,9 +299,16 @@ header {
 #hide_menu {
   display: none;
 }
-
-
-@media screen and (min-width:768px) and (max-width:1440px){
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  font-size: 20px;
+}
+.page-link {
+  padding-left: 10px;
+}
+@media screen and (min-width: 768px) and (max-width: 1440px) {
   #Search_bar {
     height: 55px;
     width: 300px;
@@ -355,7 +366,7 @@ header {
     width: 100%;
     overflow: hidden;
   }
-  .banner_item{
+  .banner_item {
     width: 100%;
     text-align: center;
   }
@@ -369,7 +380,7 @@ header {
     width: 100%;
     padding-left: 20px;
   }
-  .footer_box{
+  .footer_box {
     padding: 0px 1px;
     margin-top: 70px;
   }
@@ -405,5 +416,4 @@ header {
     font-size: 20px;
     margin-left: 10px;
   }
-
 }
