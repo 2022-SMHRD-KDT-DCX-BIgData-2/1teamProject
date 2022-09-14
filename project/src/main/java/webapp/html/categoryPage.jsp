@@ -153,12 +153,32 @@
       	}else{
       		list_length = list.size()/100+1;
       	}
-      	
-      	for(int j = 1;j<list_length;j++){
-      %>
-      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
-	<%}%>
-      	
+      	if( list_length%10 == 0){
+      		if (pageint/10 >= list_length/10){
+          		for(int j = pageint-10 ;j< pageint;j++){
+          	      %>
+          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+          		<%}
+          	}else{
+          		for(int j = pageint ;j< 10+pageint;j++){
+            	      %>
+            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+            		<%}
+          	}
+      	}else{
+      		if (pageint/10 == list_length/10){
+          		for(int j = pageint ;j< pageint + list_length%10 ;j++){
+          	      %>
+          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+          		<%}
+          	}else{
+          		for(int j = pageint ;j< 10+pageint;j++){
+            	      %>
+            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+            		<%}
+          	}
+      	}
+       %>
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
