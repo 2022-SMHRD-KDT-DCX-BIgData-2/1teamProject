@@ -2,15 +2,19 @@ package com.product;
 
 public class ProductDTO {
 	private int prodCode;
+	private String martName;
 	private String categoryName;
 	private String prodName;
 	private int prodPrice;
 	private String prodImage;
 	private String link;
-	private int prodStar;
+	private float prodStar;
 	private int prodReview;
 	public int getProdCode() {
 		return prodCode;
+	}
+	public String getMartName() {
+		return martName;
 	}
 	public String getCategoryName() {
 		return categoryName;
@@ -27,7 +31,7 @@ public class ProductDTO {
 	public String getLink() {
 		return link;
 	}
-	public int getProdStar() {
+	public float getProdStar() {
 		return prodStar;
 	}
 	public int getProdReview() {
@@ -35,6 +39,9 @@ public class ProductDTO {
 	}
 	public void setProdCode(int prodCode) {
 		this.prodCode = prodCode;
+	}
+	public void setMartName(String martName) {
+		this.martName = martName;
 	}
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
@@ -51,7 +58,7 @@ public class ProductDTO {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	public void setProdStar(int prodStar) {
+	public void setProdStar(float prodStar) {
 		this.prodStar = prodStar;
 	}
 	public void setProdReview(int prodReview) {

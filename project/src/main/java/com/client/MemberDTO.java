@@ -9,6 +9,8 @@ public class MemberDTO {
 	private String email_domain;
 	private String phone;
 	
+	
+	
 	public String getName() {
 		return name;
 	}

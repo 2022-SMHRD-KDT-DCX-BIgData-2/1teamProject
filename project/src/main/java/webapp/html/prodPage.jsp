@@ -51,7 +51,7 @@
    <footer id="main_footer">
   <div class="footer_box">
     <div>
-      스마트인재 개발원<span style="font-size: 18px"> tel ) 070-4120-6295</span>
+      스마트인재 개발원<span style="font-size: 18px"> tell ) 070-4120-6295</span>
     </div>
     <div>K-Digital Training</div>
     <div>DCX기반 빅데이터분석 서비스 개발자 과정</div>

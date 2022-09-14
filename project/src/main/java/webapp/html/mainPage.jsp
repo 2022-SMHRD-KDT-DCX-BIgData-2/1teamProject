@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.util.*" %>
+    <%@page import="com.product.ProductDAO" %>
+    <%@page import="com.product.ProductDTO" %>
+    <%@page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../css/style.css">
   </head>
-<body>
-    <header>
+<body>	
+ 	<header>
         <div id="header"></div>
      </header>
       <div id="container">
@@ -37,49 +41,34 @@
           <img id="nextBtn" />
         </section>
       </div>
+      <% ProductDAO dao = new ProductDAO();
+	      int[] randomlist = new int[9];
+	      for(int i = 0 ;i<randomlist.length;i++){
+	      	int a = (int)(Math.random()*30000);
+	      	randomlist[i] = a;
+	      }
+	      
+	      for(int i = 0; i<7;i+=2){%>
       <section id="main_container">
           <div class="main_title">이 상품 어때요?</div>
           <div class="main_contents">
-            <div class="main_item"><img src="">상품이미지</div>
-            <div class="main_item">상품입니다</div>
-            <div class="main_item">상품입니다</div>
+            <div class="main_item"><a><img src=<%=dao.mainSug(randomlist[i]).getProdImage()%>></a>
+            <p><%=dao.mainSug(randomlist[i]).getProdName()%><p>
+            <p><%=dao.mainSug(randomlist[i]).getProdPrice()%><p>
+            </div>
+            <div class="main_item"><img src=<%=dao.mainSug(randomlist[i+1]).getProdImage()%>>
+            <p><%=dao.mainSug(randomlist[i+1]).getProdName()%><p>
+            <p><%=dao.mainSug(randomlist[i+1]).getProdPrice()%><p></div>
+            <div class="main_item"><img src=<%=dao.mainSug(randomlist[i+2]).getProdImage()%>>
+            <p><%=dao.mainSug(randomlist[i+2]).getProdName()%><p>
+            <p><%=dao.mainSug(randomlist[i+2]).getProdPrice()%><p>
+            </div>
           </div>
       </section>
-      <section id="main_container">
-        <div class="main_title">MZ 인기상품</div>
-        <div class="main_contents">
-          <div class="main_item">상품입니다</div>
-          <div class="main_item">상품입니다</div>
-          <div class="main_item">상품입니다</div>
-        </div>
-    </section>
-    <section id="main_container">
-      <div class="main_title">타이틀 입니다</div>
-      <div class="main_contents">
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-        <div class="main_item">상품입니다</div>
-      </div>
-  </section>
-  <section id="main_container">
-    <div class="main_title">타이틀 입니다</div>
-    <div class="main_contents">
-      <div class="main_item">상품입니다</div>
-      <div class="main_item">상품입니다</div>
-      <div class="main_item">상품입니다</div>
-    </div>
-  </section>
-  <section id="main_container">
-    <div class="main_title">타이틀 입니다</div>
-    <div class="main_contents">
-      <div class="main_item">상품입니다</div>
-      <div class="main_item">상품입니다</div>
-      <div class="main_item">상품입니다</div>
-    </div>
-  </section>
+      <%} %>
   <footer id="main_footer">
     <div class="footer_box">
-      <div>스마트인재 개발원<span style="font-size: 18px;"> tel ) 070-4120-6295</span></div>
+      <div>스마트인재 개발원<span style="font-size: 18px;"> tell ) 070-4120-6295</span></div>
       <div>K-Digital Training</div>
       <div>DCX기반 빅데이터분석 서비스 개발자 과정</div>
     </div>
