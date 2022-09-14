@@ -78,8 +78,40 @@
             </div>
           </div>
       </section>
-      <%}
-	    }else{
+      <%	}
+	    }else if(pageint == list.size()/100){
+	    	int size =0;
+	    	if((list.size()%100)%3 == 0){
+	    		size = (pageint*100)+(list.size()%100)-2;
+	    	}else if((list.size()%100)%3 == 1){
+	    		size = (pageint*100)+(list.size()%100)-1;
+	    	}else{
+	    		size = (pageint*100)+(list.size()%100);
+	    	}
+	    	for(int i = pageint*100 ; i< size ;i+=3){%>
+	          <section id="main_container">
+	              <div class="main_contents">
+	                <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
+	                <p><%=list.get(i).getMartName()%><p>
+	                <p><%=list.get(i).getProdName()%><p>
+	                <p><%=list.get(i).getProdPrice()%><p>
+	                </div>
+	                <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
+	                <p><%=list.get(i+1).getMartName()%><p>
+	                <p><%=list.get(i+1).getProdName()%><p>
+	                <p><%=list.get(i+1).getProdPrice()%><p></div>
+	                <%if(list.get(i+2).getMartName()!=null){ %>
+	                <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
+	                <p><%=list.get(i+2).getMartName()%><p>
+	                <p><%=list.get(i+2).getProdName()%><p>
+	                <p><%=list.get(i+2).getProdPrice()%><p>
+	                </div>
+	                <%} %>
+	              </div>
+	          </section>
+	      <% }
+	    	}
+	    else{
     	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
           <section id="main_container">
               <div class="main_contents">
@@ -99,7 +131,12 @@
                 </div>
               </div>
           </section>
-      <% }}%>
+      <% }}
+	    }catch(Exception e){%>
+      		 </div>
+          </section>
+          <style></style>
+      	<% }%>
    <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item">
@@ -108,16 +145,20 @@
         </a>
       </li>
       <%
-      	System.out.print(list.size()/100);
-      	for(int j = 1;j<(list.size()/100);j++){
+      	System.out.println(list.size()/100);
+      	System.out.println((list.size()%100));
+      	int list_length = 0;
+      	if((list.size()%100) == 0){
+      		list_length = list.size()/100;
+      	}else{
+      		list_length = list.size()/100+1;
+      	}
+      	
+      	for(int j = 1;j<list_length;j++){
       %>
       <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
-	<%}
-      	}catch(Exception e){%>
-      		 </div>
-          </section>
-          <style></style>
-      	<% }%>
+	<%}%>
+      	
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
