@@ -55,7 +55,6 @@
         <div class="main_title3"><%=categoryName %></div>
       </div>
     </main>
-
 	<div id = "cartitem" onchange="">
 		<div class="item"><i class="fa-solid fa-heart"></i> 관심상품 <i class="fa-solid fa-heart"></i></div>
 		<table>
@@ -113,7 +112,7 @@
 	    	}
 	    	for(int i = pageint*100 ; i< size ;i+=3){%>
 		      <section id="main_container">
-		          <div class="main_contents">
+		          <div class="main_contents2">
 		            <div class="main_item" ><a>
 		            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
 		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
@@ -142,7 +141,7 @@
 	    else{
     	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
 		      <section id="main_container">
-		          <div class="main_contents">
+		          <div class="main_contents2">
 		            <div class="main_item" ><a>
 		            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
 		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
