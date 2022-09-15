@@ -54,19 +54,24 @@
       <section id="main_container">
           <div class="main_title"><%=title[j] %></div>
           <div class="main_contents">
-            <div class="main_item"><a><img src=<%=dao.mainSug(randomlist[i]).getProdImage()%>></a>
+            <div class="main_item"><a>
+            <div style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>); width:250px; height:320px;"></div>
             <p><%=dao.mainSug(randomlist[i]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i]).getProdName()%><p>
-            <p><%=dao.mainSug(randomlist[i]).getProdPrice()%><p>
+            <p><%=dao.mainSug(randomlist[i]).getProdPrice()%><p></a>
             </div>
-            <div class="main_item"><img src=<%=dao.mainSug(randomlist[i+1]).getProdImage()%>>
+            <div class="main_item"><a>
+            <div style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>); width:250px; height:320px;"></div>
             <p><%=dao.mainSug(randomlist[i+1]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i+1]).getProdName()%><p>
-            <p><%=dao.mainSug(randomlist[i+1]).getProdPrice()%><p></div>
-            <div class="main_item"><img src=<%=dao.mainSug(randomlist[i+2]).getProdImage()%>>
+            <p><%=dao.mainSug(randomlist[i+1]).getProdPrice()%><p></a>
+            </div>
+            <div class="main_item"><a>
+            <div style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>); width:250px; height:320px;"></div>
             <p><%=dao.mainSug(randomlist[i+2]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i+2]).getProdName()%><p>
-            <p><%=dao.mainSug(randomlist[i+2]).getProdPrice()%><p></div>
+            <p><%=dao.mainSug(randomlist[i+2]).getProdPrice()%><p></a>
+            </div>
           </div>
       </section>
       <%j++;

@@ -62,19 +62,20 @@
 	      for(int i = 0 ; i< 97;i+=3){%>
       <section id="main_container">
           <div class="main_contents">
-            <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
+            <div class="main_item" style="background-image: url(<%=list.get(i).getProdImage()%>)"><a>
             <p><%=list.get(i).getMartName()%></p>
             <p><%=list.get(i).getProdName()%></p>
-            <p><%=list.get(i).getProdPrice()%></p>
+            <p><%=list.get(i).getProdPrice()%></p></a>
             </div>
-            <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
+            <div class="main_item" style="background-image: url(<%=list.get(i+1).getProdImage()%>)"><a>
             <p><%=list.get(i+1).getMartName()%></p>
             <p><%=list.get(i+1).getProdName()%></p>
-            <p><%=list.get(i+1).getProdPrice()%></p></div>
-            <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
+            <p><%=list.get(i+1).getProdPrice()%></p></a>
+            </div>
+            <div class="main_item" style="background-image: url(<%=list.get(i+2).getProdImage()%>)"><a>
             <p><%=list.get(i+2).getMartName()%></p>
             <p><%=list.get(i+2).getProdName()%></p>
-            <p><%=list.get(i+2).getProdPrice()%></p>
+            <p><%=list.get(i+2).getProdPrice()%></p></a>
             </div>
           </div>
       </section>
@@ -89,26 +90,25 @@
 	    		size = (pageint*100)+(list.size()%100);
 	    	}
 	    	for(int i = pageint*100 ; i< size ;i+=3){%>
-	          <section id="main_container">
-	              <div class="main_contents">
-	                <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
-	                <p><%=list.get(i).getMartName()%><p>
-	                <p><%=list.get(i).getProdName()%><p>
-	                <p><%=list.get(i).getProdPrice()%><p>
-	                </div>
-	                <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
-	                <p><%=list.get(i+1).getMartName()%><p>
-	                <p><%=list.get(i+1).getProdName()%><p>
-	                <p><%=list.get(i+1).getProdPrice()%><p></div>
-	                <%if(list.get(i+2).getMartName()!=null){ %>
-	                <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
-	                <p><%=list.get(i+2).getMartName()%><p>
-	                <p><%=list.get(i+2).getProdName()%><p>
-	                <p><%=list.get(i+2).getProdPrice()%><p>
-	                </div>
-	                <%} %>
-	              </div>
-	          </section>
+			<section id="main_container">
+		          <div class="main_contents">
+		            <div class="main_item" style="background-image: url(<%=list.get(i).getProdImage()%>);"><a>
+		            <p><%=list.get(i).getMartName()%></p>
+		            <p><%=list.get(i).getProdName()%></p>
+		            <p><%=list.get(i).getProdPrice()%></p></a>
+		            </div>
+		            <div class="main_item" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"><a>
+		            <p><%=list.get(i+1).getMartName()%></p>
+		            <p><%=list.get(i+1).getProdName()%></p>
+		            <p><%=list.get(i+1).getProdPrice()%></p></a>
+		            </div>
+		            <div class="main_item" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"><a>
+		            <p><%=list.get(i+2).getMartName()%></p>
+		            <p><%=list.get(i+2).getProdName()%></p>
+		            <p><%=list.get(i+2).getProdPrice()%></p></a>
+		            </div>
+		          </div>
+			</section>
 	      <% }
 	    	}
 	    else{
@@ -139,36 +139,38 @@
       	<% }%>
    <nav aria-label="Page navigation example">
     <ul class="pagination">
+   	<!-- 이전버튼 -->
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
       <%
-      	System.out.println(list.size()/100);
-      	System.out.println((list.size()%100));
+      	
       	int list_length = 0;
       	if((list.size()%100) == 0){
       		list_length = list.size()/100;
       	}else{
       		list_length = list.size()/100+1;
       	}
-      	if( list_length%10 == 0){
-      		if (pageint/10 >= list_length/10){
-          		for(int j = pageint-10 ;j< pageint;j++){
-          	      %>
-          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
-          		<%}
-          	}else{
-          		for(int j = pageint ;j< 10+pageint;j++){
+      	System.out.println(list_length);
+      	System.out.println((list.size()%100));
+      	if((list.size()%100) == 0){
+      		int lastPage = 0;
+      		if( (10+pageint) > list_length){
+      			lastPage = list_length;
+      		}else{
+      			lastPage = 10+pageint;
+      		}
+          	//입력된 값 + 10 보다 마지막 페이지가 작을 경우 마지막 페이지만 나와주게하는 조건문 생성 
+          		for(int j = pageint ;j< lastPage;j++){
             	      %>
             	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
-            		<%}
-          	}
+            	<%}
       	}else{
       		 if((pageint%10 != 0)&&(pageint/10 == list_length/10)){
           		int last = pageint/10*10;
-          		for(int j = last ;j< last+list_length%10;j++){
+          		for(int j = last ;j< list_length;j++){
             	      %>
             	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
             		<%}
@@ -186,6 +188,7 @@
         	}
       	}
        %>
+       <!-- 다음버튼 -->
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
