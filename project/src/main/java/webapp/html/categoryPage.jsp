@@ -206,7 +206,14 @@
        %>
        <!-- 다음버튼 -->
       <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
+      <%int nextbtn = 0;
+      	if((pageint+10) >= list_length){
+      		nextbtn = list_length-10;
+      	}else{
+      		nextbtn = pageint+10;
+      	}
+      	%>
+        <a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=nextbtn%>" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
