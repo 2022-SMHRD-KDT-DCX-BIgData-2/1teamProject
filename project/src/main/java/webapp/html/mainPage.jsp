@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <!-- CSS only -->
     <link rel="stylesheet" href="../css/style.css">
   </head>
 <body>	
@@ -55,19 +56,19 @@
           <div class="main_title"><%=title[j] %></div>
           <div class="main_contents">
             <div class="main_item"><a>
-            <div style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>); width:250px; height:320px;"></div>
+            <div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);"></div>
             <p><%=dao.mainSug(randomlist[i]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i]).getProdName()%><p>
             <p><%=dao.mainSug(randomlist[i]).getProdPrice()%><p></a>
             </div>
             <div class="main_item"><a>
-            <div style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>); width:250px; height:320px;"></div>
+            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>);"></div>
             <p><%=dao.mainSug(randomlist[i+1]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i+1]).getProdName()%><p>
             <p><%=dao.mainSug(randomlist[i+1]).getProdPrice()%><p></a>
             </div>
             <div class="main_item"><a>
-            <div style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>); width:250px; height:320px;"></div>
+            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>);"></div>
             <p><%=dao.mainSug(randomlist[i+2]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i+2]).getProdName()%><p>
             <p><%=dao.mainSug(randomlist[i+2]).getProdPrice()%><p></a>
@@ -99,6 +100,7 @@
       <a href=""><i class="fa-brands fa-square-js"></i></a>
     </div>
   </footer>
+<!-- JavaScript Bundle with Popper -->
 
 </body>
 </html>
