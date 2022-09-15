@@ -3,9 +3,8 @@
 <script src="../script/script.js"></script>
 <footer id="main_footer">
   <div class="footer_box">
-    <div>
-      스마트인재 개발원<span style="font-size: 18px"> tell) 070-4120-6295</span>
-    </div>
+    <div>스마트인재 개발원</div>
+    <div> tel) 070-4120-6295</div>
     <div>K-Digital Training</div>
     <div>DCX기반 빅데이터분석 서비스 개발자 과정</div>
   </div>

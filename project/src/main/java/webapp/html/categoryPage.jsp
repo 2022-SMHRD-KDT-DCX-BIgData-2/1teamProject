@@ -61,17 +61,9 @@
 		<table>
 			<tr>
 				<td>1</td>
-				<td><input type="checkbox" class = "checkbox"></td>
+				<td><input type="checkbox" name = "item" class = "checkbox"></td>
 			</tr>
-			<tr>
-				<td>2</td>
-			</tr>
-			<tr>
-				<td>3</td>
-			</tr>
-			<tr>
-				<td>4</td>
-			</tr>
+	
 		</table>
 		<div>총 금액 : </div>
 	</div>

@@ -36,7 +36,8 @@ header {
   width: 500px;
   border-radius: 10px;
   border: 2px solid #ff7200;
-  padding: 0px 38px;
+  padding-left:25px;
+  padding-right:38px;
   margin-left: 30px;
   font-size: 18px;
 }
@@ -93,7 +94,7 @@ header {
   background-color: #fff;
   display: none;
   width: 250px;
-  height: 550px;
+  height: 500px;
   margin-left: 100px;
   padding: 15px;
   z-index: 1000;
@@ -121,7 +122,6 @@ header {
 #container {
   padding-top: 180px;
   width: 1440px;
-  
   margin: 0 auto;
 }
 
@@ -300,7 +300,6 @@ header {
 }
 .icon_style {
   padding: 35px 30px;
-
   text-align: left;
   height: 250px;
 }
@@ -405,10 +404,60 @@ header {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-@media screen and (min-width:375px) and (max-width:736px){
-  #login_sign{
-    display: none;
+/*관심상품 박스*/
+#cartitem{
+	position:fixed;
+	z-index:1020;
+	border:2px solid lightgray;
+	height:300px;
+	width:290px;
+	right:50px;
+	padding: 10px;
+	background-color:white;
+}
+.item{
+border-bottom:1px solid lightgray;
+text-align:center;	
+padding:5px;
+margin-bottom:10px;
+}
+@media (max-width:425px){
+html{
+	width:100%;
+}
+body{
+	width:100%;
+}
+#main_footer{
+  width:100%;
   }
+.footer_box {
+  padding: 30px 25px;
+  text-align: left;
+  height: 250px;
+}
+.footer_box > div {
+  padding: 5px;
+}
+.footer_box > div:first-child {
+  font-size: 13px;
+  font-weight: bold;
+}
+.footer_box > div:nth-child(1) {
+  font-size: 13px;
+  font-weight: bold;
+}
+.footer_box > div:nth-child(2) {
+  font-size: 13px;
+}
+.footer_box > div:nth-child(3) {
+  font-size: 13px;
+}
+#team_name > div {
+  font-size: 13px;
+}
+}
+@media (max-width:768px) {
   #Search_bar {
     height: 55px;
     width: 300px;
@@ -433,24 +482,26 @@ header {
     height: 50px;
   }
   #container {
+  	width:768px;
     padding-top: 180px;
-    width: 100%;
     margin: 0 auto;
+  }
+  .carousel-item>img{
+	width:100%;
   }
   #main_container {
     width: 100%;
     height: 100%;
     background-color: white;
-    display:flex;
+    
   }
   .main_contents {
     width: 100%;
-    height: 450px;
+    height: 400px;
     background-color: whitesmoke;
     align-items: center;
     justify-content: space-around;
   }
-
   #main_header {
     width: 100%;
     height: 140px;
@@ -460,28 +511,86 @@ header {
   }
   .main_item {
     width: 220px;
-    height: 300px;
-    border: 1px solid gray;
+    /*height: 300px;*/
+    /*border: 1px solid gray;*/
     transition: all 1s;
   }
+  #cartitem{
+	display:none;
+  }
+  #main_footer{
+  width:100%;
+  }
+.footer_box {
+  padding: 30px 25px;
+  text-align: left;
+  height: 250px;
+  margin-right:0px;
 }
-/*관심상품 박스*/
-#cartitem{
-	position:fixed;
-	z-index:1020;
-	border:2px solid lightgray;
-	height:300px;
-	width:290px;
-	right:50px;
-	padding: 10px;
-	background-color:white;
+.footer_box > div {
+  padding: 5px;
 }
-.item{
-border-bottom:1px solid lightgray;
-text-align:center;	
-padding:5px;
-margin-bottom:10px;
+.footer_box > div:first-child {
+  font-size: 15px;
+  font-weight: bold;
 }
-.checkbox{
-	
+.footer_box > div:nth-child(1) {
+  font-size: 15px;
+  font-weight: bold;
+}
+.footer_box > div:nth-child(2) {
+  font-size: 15px;
+}
+.footer_box > div:nth-child(3) {
+  font-size: 15px;
+}
+#team_name > div {
+  font-size: 14px;
+}
+.icon_style {
+  padding: 35px 20px;
+  text-align: left;
+  height: 250px;
+}
+.icon_style > a {
+  font-size: 30px;
+  margin-left: 12px;
+}
+#main_container {
+  width: 768px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
+.main_contents {
+  margin: 0px auto;
+  display: flex;
+  width: 100%;
+  height: 450px;
+  background-color: whitesmoke;
+  justify-content: space-around;
+}
+.main_title {
+  margin: 0px auto;
+  padding-bottom:10px;
+  width: 400px;
+  height: 80px;
+  line-height: 100px;
+  text-align: center;
+  background-color: white;
+  font-size: 2em;
+  border-bottom: 3px solid #ff7200;
+}
+.prodImg{
+	background-size:100%;
+	background-repeat:no-repeat;
+	background-position:center;
+	width:220px; 
+	height:250px;
+	display:flex;
+	justify-content:flex-end;
+	flex-direction:flex-end;
+	align-items: flex-end;
+	padding-right:10px;
+}
 }
