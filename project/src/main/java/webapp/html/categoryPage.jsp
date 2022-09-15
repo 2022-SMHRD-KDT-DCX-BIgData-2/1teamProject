@@ -62,17 +62,20 @@
 	      for(int i = 0 ; i< 97;i+=3){%>
       <section id="main_container">
           <div class="main_contents">
-            <div class="main_item" style="background-image: url(<%=list.get(i).getProdImage()%>)"><a>
+            <div class="main_item" ><a>
+            <div style="background-image: url(<%=list.get(i).getProdImage()%>); width:250px; height:320px;"></div>
             <p><%=list.get(i).getMartName()%></p>
             <p><%=list.get(i).getProdName()%></p>
             <p><%=list.get(i).getProdPrice()%></p></a>
             </div>
-            <div class="main_item" style="background-image: url(<%=list.get(i+1).getProdImage()%>)"><a>
+            <div class="main_item" ><a>
+            <div style="background-image: url(<%=list.get(i+1).getProdImage()%>); width:250px; height:320px;"></div>
             <p><%=list.get(i+1).getMartName()%></p>
             <p><%=list.get(i+1).getProdName()%></p>
             <p><%=list.get(i+1).getProdPrice()%></p></a>
             </div>
-            <div class="main_item" style="background-image: url(<%=list.get(i+2).getProdImage()%>)"><a>
+            <div class="main_item" ><a>
+            <div style="background-image: url(<%=list.get(i+2).getProdImage()%>); width:250px; height:320px;"></div>
             <p><%=list.get(i+2).getMartName()%></p>
             <p><%=list.get(i+2).getProdName()%></p>
             <p><%=list.get(i+2).getProdPrice()%></p></a>
@@ -90,25 +93,28 @@
 	    		size = (pageint*100)+(list.size()%100);
 	    	}
 	    	for(int i = pageint*100 ; i< size ;i+=3){%>
-			<section id="main_container">
+		      <section id="main_container">
 		          <div class="main_contents">
-		            <div class="main_item" style="background-image: url(<%=list.get(i).getProdImage()%>);"><a>
+		            <div class="main_item" ><a>
+		            <div style="background-image: url(<%=list.get(i).getProdImage()%>); width:250px; height:320px;"></div>
 		            <p><%=list.get(i).getMartName()%></p>
 		            <p><%=list.get(i).getProdName()%></p>
 		            <p><%=list.get(i).getProdPrice()%></p></a>
 		            </div>
-		            <div class="main_item" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"><a>
+		            <div class="main_item" ><a>
+		            <div style="background-image: url(<%=list.get(i+1).getProdImage()%>); width:250px; height:320px;"></div>
 		            <p><%=list.get(i+1).getMartName()%></p>
 		            <p><%=list.get(i+1).getProdName()%></p>
 		            <p><%=list.get(i+1).getProdPrice()%></p></a>
 		            </div>
-		            <div class="main_item" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"><a>
+		            <div class="main_item" ><a>
+		            <div style="background-image: url(<%=list.get(i+2).getProdImage()%>); width:250px; height:320px;"></div>
 		            <p><%=list.get(i+2).getMartName()%></p>
 		            <p><%=list.get(i+2).getProdName()%></p>
 		            <p><%=list.get(i+2).getProdPrice()%></p></a>
 		            </div>
 		          </div>
-			</section>
+		      </section>
 	      <% }
 	    	}
 	    else{
