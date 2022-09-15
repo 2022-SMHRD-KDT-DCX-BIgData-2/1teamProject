@@ -16,14 +16,14 @@ public class MemberDAO{
 		public MemberDAO(){
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				String dbURL= "jdbc:mysql://localhost:3306/clients?"+"useUnicode=true&characterEncoding=utf-8";
-				String dbID= "root";
-				String dbPassword= "1234";
-				conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+				String dbURL = "jdbc:mysql://project-db-stu.ddns.net:3307/seocho_0830_1?"+"useUnicode=true&characterEncoding=utf-8";
+				String dbID = "seocho_0830_1";
+				String dbpassword = "smhrd1";
+				conn = DriverManager.getConnection(dbURL,dbID,dbpassword);
 				System.out.println("DB연결성공");
-			}catch (Exception e) {
-				e.printStackTrace();
+			}catch(Exception e) {
 				System.out.println("DB연결실패");
+				e.printStackTrace();
 			}
 		}
 		

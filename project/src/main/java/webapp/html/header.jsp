@@ -21,11 +21,12 @@
 	}
 %>
     <header>
+    <form action="../prodSearch.jsp" method="post">
         <div id="main_header">
           <div id="logo"><a href="mainPage.jsp"><img src="../image/logo.png" class="main_logo" alt="main_log"></a></div>
           <div id="Search">
             <input type="text" name="Search_bar" id="Search_bar" placeholder="검색어를 입력해주세요"/>
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <label><i class="fa-solid fa-magnifying-glass search-icon"></i><button style="display:none;"></button></label>
           </div>
           <%if(userid == null){%>
           <div id="login_sign">
@@ -43,6 +44,7 @@
              </div>
           <%} %>
         </div>
+        </form>
         <button id="page_up" onclick="window.scrollTo(0, 0)">TOP</button>
         <navbar id="navber">
           <a href ="mainPage.jsp" id="hover_event" class="menu_item" ><i class="fa-solid fa-bars"></i> &nbsp;&nbsp;카테고리
@@ -75,7 +77,7 @@
             <a href="categoryPage.jsp?categoryName=생수/음료/커피/차/주류"><li><div class="add_menu">생수/음료/커피/차/주류</div></li></a>
             <a href="categoryPage.jsp?categoryName=라면/통조림/즉석식품"><li><div class="add_menu">라면/통조림/즉석식품</div></li></a>
             <a href="categoryPage.jsp?categoryName=건강식품"><li><div class="add_menu">건강식품</div></li></a>
-            <a href="categoryPage.jsp?categoryName=친환경/유기농"><li><div class="add_menu">친환경/유기농</div></li></a>
+            
         </ul>
         </div>
       </header>

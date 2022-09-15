@@ -100,4 +100,30 @@ public class ProductDAO {
 		}
 		return list;
 	}
+	
+	public ArrayList<ProductDTO> productSearch(String search){
+		String SQL = "select * from product where prodName like '%%"+search+"%%';";
+		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO();
+				dto.setProdCode(rs.getInt(1));
+				dto.setMartName(rs.getString(2));
+				dto.setCategoryName(rs.getString(3));
+				dto.setProdName(rs.getString(4));
+				dto.setProdPrice(rs.getInt(5));
+				dto.setProdImage(rs.getString(6));
+				dto.setLink(rs.getString(7));
+				dto.setProdStar(rs.getFloat(8));
+				dto.setProdReview(rs.getInt(9));
+				list.add(dto);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
