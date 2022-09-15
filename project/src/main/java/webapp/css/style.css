@@ -185,12 +185,24 @@ header {
   margin: 0 auto;
   background-color: white;
 }
-.main_title {
-  margin: 0 auto;
+.main_title3 {
+  /*margin: 0 auto;*/
   width: 400px;
   height: 80px;
   line-height: 100px;
-  /*text-align: center;*/
+  margin-left:410px;
+  text-align: center;
+  background-color: white;
+  font-size: 2em;
+  border-bottom: 3px solid #ff7200;
+}
+.main_title {
+  margin: 0px auto;
+  padding-bottom:20px;
+  width: 400px;
+  height: 80px;
+  line-height: 100px;
+  text-align: center;
   background-color: white;
   font-size: 2em;
   border-bottom: 3px solid #ff7200;
@@ -199,7 +211,7 @@ header {
   margin: 0 auto;
   display: flex;
   width: 1080px;
-  height: 470px;
+  height: 500px;
   background-color: whitesmoke;
   justify-content: space-around;
 }
@@ -358,8 +370,8 @@ header {
 /*categoryPage.css 합침*/
 
 #main_box {
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
   padding-top: 240px;
 }
 .article {
@@ -429,6 +441,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: white;
+    display:flex;
   }
   .main_contents {
     width: 100%;
@@ -451,4 +464,24 @@ header {
     border: 1px solid gray;
     transition: all 1s;
   }
+}
+/*관심상품 박스*/
+#cartitem{
+	position:fixed;
+	z-index:1020;
+	border:2px solid lightgray;
+	height:300px;
+	width:290px;
+	right:50px;
+	padding: 10px;
+	background-color:white;
+}
+.item{
+border-bottom:1px solid lightgray;
+text-align:center;	
+padding:5px;
+margin-bottom:10px;
+}
+.checkbox{
+	
 }
