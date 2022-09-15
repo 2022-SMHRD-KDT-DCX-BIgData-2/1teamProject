@@ -49,12 +49,33 @@
     <header>
       <div id="header"></div>
     </header>
+    <div>
     <main>
       <div id="main_box">
-        <div class="main_title"><%=categoryName %></div>
+        <div class="main_title3"><%=categoryName %></div>
       </div>
     </main>
-    
+
+	<div id = "cartitem" onchange="">
+		<div class="item"><i class="fa-solid fa-heart"></i> 관심상품 <i class="fa-solid fa-heart"></i></div>
+		<table>
+			<tr>
+				<td>1</td>
+				<td><input type="checkbox" class = "checkbox"></td>
+			</tr>
+			<tr>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+			</tr>
+		</table>
+		<div>총 금액 : </div>
+	</div>
+  
      <% ProductDAO dao = new ProductDAO();
      	ArrayList<ProductDTO> list = dao.productList(categoryName);
 	      System.out.println(categoryName);
@@ -157,8 +178,8 @@
 	    }catch(Exception e){%>
       		 </div>
           </section>
-          <style></style>
       	<% }%>
+      	</div>
    <nav aria-label="Page navigation example">
     <ul class="pagination">
    	<!-- 이전버튼 -->

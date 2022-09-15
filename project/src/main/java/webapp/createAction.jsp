@@ -28,7 +28,7 @@
 	}else{
 		MemberDAO member = new MemberDAO();
 		int result= member.join(dto);
-		if (result ==-1){
+		if (result == -1){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 존재하는 아이디입니다')");
