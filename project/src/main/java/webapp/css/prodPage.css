@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Noto Sans KR", sans-serif;
-}
+
 #main_box {
   display: flex;
   justify-content: center;
@@ -32,7 +27,7 @@
   font-size: 35px;
   line-height: 80px;
 }
-#prodImg {
+#prodImg2 {
   width: 500px;
   height: 600px;
   background-image: url(https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1599107900298l0.jpg);

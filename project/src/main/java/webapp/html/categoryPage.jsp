@@ -41,8 +41,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/prodPage.css" />
+
   </head>
   <body>
     <header>
@@ -63,24 +64,27 @@
 	      for(int i = 0 ; i< 97;i+=3){
 	    	  %>
       <section id="main_container">
-          <div class="main_contents">
+          <div class="main_contents2">
             <div class="main_item" ><a>
-            <div style="background-image: url(<%=list.get(i).getProdImage()%>); width:250px; height:320px;"></div>
-            <p><%=list.get(i).getMartName()%></p>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i).getMartName()%></p>
             <p><%=list.get(i).getProdName()%></p>
-            <p><%=list.get(i).getProdPrice()%></p></a>
+            <p class="prodPrice"><%=list.get(i).getProdPrice()%></p></a>
             </div>
             <div class="main_item" ><a>
-            <div style="background-image: url(<%=list.get(i+1).getProdImage()%>); width:250px; height:320px;"></div>
-            <p><%=list.get(i+1).getMartName()%></p>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i+1).getMartName()%></p>
             <p><%=list.get(i+1).getProdName()%></p>
-            <p><%=list.get(i+1).getProdPrice()%></p></a>
+            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%></p></a>
             </div>
             <div class="main_item" ><a>
-            <div style="background-image: url(<%=list.get(i+2).getProdImage()%>); width:250px; height:320px;"></div>
-            <p><%=list.get(i+2).getMartName()%></p>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i+2).getMartName()%></p>
             <p><%=list.get(i+2).getProdName()%></p>
-            <p><%=list.get(i+2).getProdPrice()%></p></a>
+            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%></p></a>
             </div>
           </div>
       </section>
@@ -98,22 +102,25 @@
 		      <section id="main_container">
 		          <div class="main_contents">
 		            <div class="main_item" ><a>
-		            <div style="background-image: url(<%=list.get(i).getProdImage()%>); width:250px; height:320px;"></div>
-		            <p><%=list.get(i).getMartName()%></p>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i).getMartName()%></p>
 		            <p><%=list.get(i).getProdName()%></p>
-		            <p><%=list.get(i).getProdPrice()%></p></a>
+		            <p class="prodPrice"><%=list.get(i).getProdPrice()%></p></a>
 		            </div>
 		            <div class="main_item" ><a>
-		            <div style="background-image: url(<%=list.get(i+1).getProdImage()%>); width:250px; height:320px;"></div>
-		            <p><%=list.get(i+1).getMartName()%></p>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i+1).getMartName()%></p>
 		            <p><%=list.get(i+1).getProdName()%></p>
-		            <p><%=list.get(i+1).getProdPrice()%></p></a>
+		            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%></p></a>
 		            </div>
 		            <div class="main_item" ><a>
-		            <div style="background-image: url(<%=list.get(i+2).getProdImage()%>); width:250px; height:320px;"></div>
-		            <p><%=list.get(i+2).getMartName()%></p>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i+2).getMartName()%></p>
 		            <p><%=list.get(i+2).getProdName()%></p>
-		            <p><%=list.get(i+2).getProdPrice()%></p></a>
+		            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%></p></a>
 		            </div>
 		          </div>
 		      </section>
@@ -121,24 +128,31 @@
 	    	}
 	    else{
     	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
-          <section id="main_container">
-              <div class="main_contents">
-                <div class="main_item"><a><img src=<%=list.get(i).getProdImage()%>></a>
-                <p><%=list.get(i).getMartName()%><p>
-                <p><%=list.get(i).getProdName()%><p>
-                <p><%=list.get(i).getProdPrice()%><p>
-                </div>
-                <div class="main_item"><img src=<%=list.get(i+1).getProdImage()%>>
-                <p><%=list.get(i+1).getMartName()%><p>
-                <p><%=list.get(i+1).getProdName()%><p>
-                <p><%=list.get(i+1).getProdPrice()%><p></div>
-                <div class="main_item"><img src=<%=dao.productList(categoryName).get(i+2).getProdImage()%>>
-                <p><%=list.get(i+2).getMartName()%><p>
-                <p><%=list.get(i+2).getProdName()%><p>
-                <p><%=list.get(i+2).getProdPrice()%><p>
-                </div>
-              </div>
-          </section>
+		      <section id="main_container">
+		          <div class="main_contents">
+		            <div class="main_item" ><a>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i).getMartName()%></p>
+		            <p><%=list.get(i).getProdName()%></p>
+		            <p class="prodPrice"><%=list.get(i).getProdPrice()%></p></a>
+		            </div>
+		            <div class="main_item" ><a>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i+1).getMartName()%></p>
+		            <p><%=list.get(i+1).getProdName()%></p>
+		            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%></p></a>
+		            </div>
+		            <div class="main_item" ><a>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i+2).getMartName()%></p>
+		            <p><%=list.get(i+2).getProdName()%></p>
+		            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%></p></a>
+		            </div>
+		          </div>
+		      </section>
       <% }}
 	    }catch(Exception e){%>
       		 </div>
@@ -251,6 +265,7 @@
         <a href=""><i class="fa-brands fa-square-js"></i></a>
       </div>
     </footer>
- 
+ <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
 </html>

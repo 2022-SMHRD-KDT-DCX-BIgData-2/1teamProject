@@ -71,7 +71,7 @@
             />
           </div>
         </div>
-        <div class="bigbox2">
+        <div class="bigbox3">
         <span id="same" style="font-size: 12px;"></span>
         </div>
        </div>

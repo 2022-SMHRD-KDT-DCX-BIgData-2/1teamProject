@@ -115,9 +115,13 @@ header {
   opacity: 1;
 } */
 /*banner*/
+.carousel-item>img{
+	height:350px;
+}
 #container {
   padding-top: 180px;
   width: 1440px;
+  
   margin: 0 auto;
 }
 
@@ -186,13 +190,21 @@ header {
   width: 400px;
   height: 80px;
   line-height: 100px;
-  text-align: center;
+  /*text-align: center;*/
   background-color: white;
   font-size: 2em;
   border-bottom: 3px solid #ff7200;
 }
 .main_contents {
   margin: 0 auto;
+  display: flex;
+  width: 1080px;
+  height: 470px;
+  background-color: whitesmoke;
+  justify-content: space-around;
+}
+.main_contents2 {
+  margin: 0 30px;
   display: flex;
   width: 1080px;
   height: 470px;
@@ -212,6 +224,26 @@ header {
 	background-position:center;
 	width:310px; 
 	height:330px;
+	display:flex;
+	justify-content:flex-end;
+	flex-direction:flex-end;
+	align-items: flex-end;
+	padding-right:10px;
+}
+
+.prodImg>button{
+	position:absolute;
+	border:1px solid gray;
+	border-radius:40% 40% 40% 40%;
+	height:3em;
+	width:3em;
+	margin-bottom:20px;
+	background-color:white;
+}
+.prodImg>button i{
+	font-size:20px;	
+	color:black;
+	margin:auto;
 }
 .mart{
 	color : blue;
@@ -280,19 +312,19 @@ header {
 <!--페이지네이션-->
 .pagenav{
 	text-align:center;
-	color:black;
 }
 .pagination {
   display: flex;
   justify-content: center;
   padding-top: 30px;
   font-size: 20px;
-  color:black;
 }
 .page-link {
   padding-left: 10px;
 }
-
+.pagination>li{
+	color:black;
+}
 @media screen {
 }
 /*페이지 맨위로 */
@@ -315,4 +347,108 @@ header {
 }
 #hide_menu {
   display: none;
+}
+#same{
+	margin-left:210px;
+	padding:0px 0px;
+}
+.bigbox3{
+	padding:0px;
+}
+/*categoryPage.css 합침*/
+
+#main_box {
+  display: flex;
+  justify-content: center;
+  padding-top: 240px;
+}
+.article {
+  display: flex;
+  background-color: rgb(252, 249, 244);
+  padding: 50px 100px;
+}
+#main_box2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5em;
+}
+#main_box2 > div {
+  font-size: 25px;
+  margin: 20px 0px;
+}
+.main_title2 {
+  height: 80px;
+  width: 250px;
+  margin-bottom: 70px;
+  border-bottom: 4px solid green;
+  text-align: center;
+  font-size: 35px;
+  line-height: 80px;
+}
+#prodImg2 {
+  width: 500px;
+  height: 600px;
+  background-image: url(https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1599107900298l0.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+@media screen and (min-width:375px) and (max-width:736px){
+  #login_sign{
+    display: none;
+  }
+  #Search_bar {
+    height: 55px;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid #ff7200;
+    padding: 0px 25px;
+    margin-left: 30px;
+    font-size: 15px;
+  }
+  #login_sign > a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 0px 10px;
+  }
+  #navber {
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsl(23, 87%, 97%);
+    box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
+    height: 50px;
+  }
+  #container {
+    padding-top: 180px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #main_container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  .main_contents {
+    width: 100%;
+    height: 450px;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #main_header {
+    width: 100%;
+    height: 140px;
+    align-items: center;
+    background-color: white;
+    /* position: fixed; */
+  }
+  .main_item {
+    width: 220px;
+    height: 300px;
+    border: 1px solid gray;
+    transition: all 1s;
+  }
 }

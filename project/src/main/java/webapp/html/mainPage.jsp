@@ -22,25 +22,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
     <!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
   </head>
 <body>	
  	<header>
         <div id="header"></div>
      </header>
-      <div id="container">
-        <section id="banner">
-          <img id="prevBtn" />
-          <div id="bannerBox">
-            <ul>
-              <li class="banner_item">1</li>
-              <li class="banner_item">2</li>
-              <li class="banner_item">3</li>
-              <li class="banner_item">4</li>
-            </ul>
+      <div id = "container">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="../image/background1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../image/background2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../image/background1.jpg" class="d-block w-100" alt="...">
+            </div>
           </div>
-          <img id="nextBtn" />
-        </section>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
       <% ProductDAO dao = new ProductDAO();
 	      int[] randomlist = new int[12];
@@ -56,22 +66,25 @@
           <div class="main_title"><%=title[j] %></div>
           <div class="main_contents">
             <div class="main_item"><a>
-            <div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);"></div>
-            <p><%=dao.mainSug(randomlist[i]).getMartName()%><p>
+            <div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=dao.mainSug(randomlist[i]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i]).getProdName()%><p>
-            <p><%=dao.mainSug(randomlist[i]).getProdPrice()%><p></a>
+            <p class="prodPrice"><%=dao.mainSug(randomlist[i]).getProdPrice()%><p></a>
             </div>
             <div class="main_item"><a>
-            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>);"></div>
-            <p><%=dao.mainSug(randomlist[i+1]).getMartName()%><p>
+            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=dao.mainSug(randomlist[i+1]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i+1]).getProdName()%><p>
-            <p><%=dao.mainSug(randomlist[i+1]).getProdPrice()%><p></a>
+            <p class="prodPrice"><%=dao.mainSug(randomlist[i+1]).getProdPrice()%><p></a>
             </div>
             <div class="main_item"><a>
-            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>);"></div>
-            <p><%=dao.mainSug(randomlist[i+2]).getMartName()%><p>
+            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=dao.mainSug(randomlist[i+2]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i+2]).getProdName()%><p>
-            <p><%=dao.mainSug(randomlist[i+2]).getProdPrice()%><p></a>
+            <p class="prodPrice"><%=dao.mainSug(randomlist[i+2]).getProdPrice()%><p></a>
             </div>
           </div>
       </section>
@@ -101,6 +114,6 @@
     </div>
   </footer>
 <!-- JavaScript Bundle with Popper -->
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>

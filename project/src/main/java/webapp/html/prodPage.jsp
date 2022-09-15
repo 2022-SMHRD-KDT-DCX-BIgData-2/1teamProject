@@ -32,10 +32,10 @@
     </header>
     <main>
       <div id="main_box">
-        <div class="main_title">상품 상세정보</div>
+        <div class="main_title2">상품 상세정보</div>
       </div>
       <div class="article">
-        <div id="prodImg"></div>
+        <div id="prodImg2"></div>
         <div id="main_box2">
           <div>저탄소 GAP 추희 자두 1.1kg</div>
           <div><b>9900원</b></div>
