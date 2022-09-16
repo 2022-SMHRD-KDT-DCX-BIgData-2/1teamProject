@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<button><i class="fa-solid fa-cart-plus"></i></button></div>
+<form action="../cartAction.jsp" method="post"><button><i class="fa-solid fa-cart-plus"></i></button></form>
 </body>
 </html>

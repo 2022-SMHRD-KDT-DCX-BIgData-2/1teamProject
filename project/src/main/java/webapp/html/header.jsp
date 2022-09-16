@@ -15,6 +15,7 @@
   </head>
 <body>
 <%	
+//세션값에 들어있는 로그인 정보를 가져오는 로직 입니다!! 
 	String userid = null;
 	if(session.getAttribute("userid") != null ){
 		userid = (String)session.getAttribute("userid");
@@ -28,7 +29,9 @@
             <input type="text" name="Search_bar" id="Search_bar" placeholder="검색어를 입력해주세요"/>
             <label><i class="fa-solid fa-magnifying-glass search-icon"></i><button style="display:none;"></button></label>
           </div>
-          <%if(userid == null){%>
+          <%
+          //userid 값이 null이면 로그인 /회원가입 창 userid값이 있으면 아이디 정보와 로그아웃 문구 표시
+          if(userid == null){%>
           <div id="login_sign">
             <a href="loginPage.jsp">로그인</a>
             <a href="create.jsp"> 회원가입</a>

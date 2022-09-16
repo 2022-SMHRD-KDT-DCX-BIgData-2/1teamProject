@@ -55,21 +55,25 @@
       </div>
  
       <% ProductDAO dao = new ProductDAO();
+      //우리가원하는 상품 갯수만큼 랜덤숫자 부여하는 로직 ! 
 	      int[] randomlist = new int[12];
-	      int len = dao.productAll().size();
+	      int len = dao.productAll().size();//전체상품 길이를 받아오는 dao
+	      //리스트의 길이만금 랜덤숫자 부여 
 	      for(int i = 0 ;i<randomlist.length;i++){
 	      	int a = (int)(Math.random()*len);
 	      	randomlist[i] = a;
 	      }
+	      //타이틀 들어갈곳
 	      String title[] = {"이 상품 어때요?","Query 추천상품","이것만 담아도 장바구니 뚝딱!","수고했어 오늘도"};
 	      int j =0;
+	      //위에 랜덤으로 정해준 숫자를 통해 상품 정보를 받아옴 dao.mainSug(randomlist[i])  ->randomlist[i]이게 매개변수 
 	      for(int i = 0; i<10;i+=3){%>
       <section id="main_container">
           <div class="main_title"><%=title[j] %></div>
           <div class="main_contents">
             <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
             <a href="#"><div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);"></a>
-            <%@ include file="../html/button.jsp" %>
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=dao.mainSug(randomlist[i]).getMartName()%><p>
             <p class="prodName"><%=dao.mainSug(randomlist[i]).getProdName()%><p>
             <p class="prodPrice"><%=dao.mainSug(randomlist[i]).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i]).getProdStar()%>점</span>
@@ -77,7 +81,7 @@
             </div>
             <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
             <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>);">
-            <%@ include file="../html/button.jsp" %>
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=dao.mainSug(randomlist[i+1]).getMartName()%><p>
             <p class="prodName"><%=dao.mainSug(randomlist[i+1]).getProdName()%><p>
             <p class="prodPrice"><%=dao.mainSug(randomlist[i+1]).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i]).getProdStar()%>점</span>
@@ -85,7 +89,7 @@
             </div>
             <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
             <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>);">
-            <%@ include file="../html/button.jsp" %>
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=dao.mainSug(randomlist[i+2]).getMartName()%><p>
             <p class="prodName"><%=dao.mainSug(randomlist[i+2]).getProdName()%><p>
             <p class="prodPrice"><%=dao.mainSug(randomlist[i+2]).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i]).getProdStar()%>점</span>
@@ -93,7 +97,9 @@
             </div>
           </div>
       </section>
-      <%j++;
+      <%
+      //j인덱스 값 더해줌
+      j++;
       } %>
      
   <footer id="main_footer">

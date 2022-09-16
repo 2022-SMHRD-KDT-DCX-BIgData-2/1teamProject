@@ -20,6 +20,7 @@
 		String search = request.getParameter("Search_bar");
 		System.out.println(search);
 		PrintWriter print = response.getWriter();
+		//검색 내용이 없으면 경고창을 띄워주고 다시 메인페이지로 돌아감. 
 		if(search == ""){ 
 			print.println("<script>alert('검색어를 입력해주세요'); location.href = './html/mainPage.jsp';</script>");	
 		}else if(search.equals("과일")||search.equals("채소")||search.equals("건강식품")){
