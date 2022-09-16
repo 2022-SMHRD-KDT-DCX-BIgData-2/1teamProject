@@ -276,9 +276,20 @@ header {
 }
 .mart{
 	color : blue;
+	font-size:14px;
 }
 .prodPrice{
 	font-weight: bold;
+	color:blue;
+}
+.prodName{
+	color:black;
+	font-size:17px;
+}
+.prodReview{
+	font-size:12px;
+	color:black;
+	line-height:24px;
 }
 /*footer*/
 
@@ -506,6 +517,7 @@ body{
   .carousel-item>img{
 	width:100%;
   }
+
   #main_container {
     width: 100%;
     height: 100%;

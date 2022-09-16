@@ -78,25 +78,25 @@
             <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
             <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=list.get(i).getMartName()%></p>
-            <p><%=list.get(i).getProdName()%></p>
-            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i).getProdStar()%>점</span>
-            &nbsp;&nbsp;<span><%=list.get(i).getProdReview()%>개</span></p></a>
+            <p class="prodName"><%=list.get(i).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p></a>
             </div>
             <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
             <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
             <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=list.get(i+1).getMartName()%></p>
-            <p><%=list.get(i+1).getProdName()%></p>
-            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i+1).getProdStar()%>점</span>
-            &nbsp;&nbsp;<span><%=list.get(i+1).getProdReview()%>개</span></p></a>
+            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p></a>
             </div>
             <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
             <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
             <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=list.get(i+2).getMartName()%></p>
-            <p><%=list.get(i+2).getProdName()%></p>
-            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i+2).getProdStar()%>점</span>
-            &nbsp;&nbsp;<span><%=list.get(i+2).getProdReview()%>개</span></p></a>
+            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p></a>
             </div>
           </div>
       </section>
@@ -111,66 +111,66 @@
 	    		size = (pageint*100)+(list.size()%100);
 	    	}
 	    	for(int i = pageint*100 ; i< size ;i+=3){%>
-		      <section id="main_container">
-		          <div class="main_contents2">
-					<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-		            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
-		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-		            <p class="mart"><%=list.get(i).getMartName()%></p>
-		            <p><%=list.get(i).getProdName()%></p>
-		            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i).getProdStar()%>점</span>
-		            &nbsp;&nbsp;<span><%=list.get(i).getProdReview()%>개</span></p></a>
-		            </div>
-		            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-		            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
-		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-		            <p class="mart"><%=list.get(i+1).getMartName()%></p>
-		            <p><%=list.get(i+1).getProdName()%></p>
-		            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i+1).getProdStar()%>점</span>
-		            &nbsp;&nbsp;<span><%=list.get(i+1).getProdReview()%>개</span></p></a>
-		            </div>
-		            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-		            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
-		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-		            <p class="mart"><%=list.get(i+2).getMartName()%></p>
-		            <p><%=list.get(i+2).getProdName()%></p>
-		            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i+2).getProdStar()%>점</span>
-		            &nbsp;&nbsp;<span><%=list.get(i+2).getProdReview()%>개</span></p></a>
-		            </div>
-		          </div>
-		      </section>
+      <section id="main_container">
+          <div class="main_contents2">
+			<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i).getMartName()%></p>
+            <p class="prodName"><%=list.get(i).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p></a>
+            </div>
+            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i+1).getMartName()%></p>
+            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p></a>
+            </div>
+            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i+2).getMartName()%></p>
+            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p></a>
+            </div>
+          </div>
+      </section>
 	      <% }
 	    	}
 	    else{
     	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
-		      <section id="main_container">
-		          <div class="main_contents2">
-					<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-		            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
-		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-		            <p class="mart"><%=list.get(i).getMartName()%></p>
-		            <p><%=list.get(i).getProdName()%></p>
-		            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i).getProdStar()%>점</span>
-		            &nbsp;&nbsp;<span><%=list.get(i).getProdReview()%>개</span></p></a>
-		            </div>
-		            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-		            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
-		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-		            <p class="mart"><%=list.get(i+1).getMartName()%></p>
-		            <p><%=list.get(i+1).getProdName()%></p>
-		            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i+1).getProdStar()%>점</span>
-		            &nbsp;&nbsp;<span><%=list.get(i+1).getProdReview()%>개</span></p></a>
-		            </div>
-		            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-		            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
-		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-		            <p class="mart"><%=list.get(i+2).getMartName()%></p>
-		            <p><%=list.get(i+2).getProdName()%></p>
-		            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span>평점 : <%=list.get(i+2).getProdStar()%>점</span>
-		            &nbsp;&nbsp;<span><%=list.get(i+2).getProdReview()%>개</span></p></a>
-		            </div>
-		          </div>
-		      </section>
+      <section id="main_container">
+          <div class="main_contents2">
+			<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i).getMartName()%></p>
+            <p class="prodName"><%=list.get(i).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p></a>
+            </div>
+            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i+1).getMartName()%></p>
+            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p></a>
+            </div>
+            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
+            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+            <p class="mart"><%=list.get(i+2).getMartName()%></p>
+            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
+            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
+            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p></a>
+            </div>
+          </div>
+      </section>
       <% }}
 	    }catch(Exception e){%>
       		 </div>
