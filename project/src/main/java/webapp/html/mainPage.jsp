@@ -66,21 +66,21 @@
       <section id="main_container">
           <div class="main_title"><%=title[j] %></div>
           <div class="main_contents">
-            <div class="main_item"><a>
+            <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
             <div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);">
             <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=dao.mainSug(randomlist[i]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i]).getProdName()%><p>
             <p class="prodPrice"><%=dao.mainSug(randomlist[i]).getProdPrice()%><p></a>
             </div>
-            <div class="main_item"><a>
+            <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
             <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>);">
             <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=dao.mainSug(randomlist[i+1]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i+1]).getProdName()%><p>
             <p class="prodPrice"><%=dao.mainSug(randomlist[i+1]).getProdPrice()%><p></a>
             </div>
-            <div class="main_item"><a>
+            <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
             <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>);">
             <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=dao.mainSug(randomlist[i+2]).getMartName()%><p>
