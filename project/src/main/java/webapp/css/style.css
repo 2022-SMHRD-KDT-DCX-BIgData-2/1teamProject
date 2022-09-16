@@ -80,6 +80,15 @@ header {
   color: black;
   transition: all 1s;
 }
+.menu_item > a{
+	text-decoration: none;
+	transition: all 1s;
+	color: black;
+}
+.menu_item >a:hover {
+  color: gray;
+}
+
 .menu_item:hover {
   color: gray;
 }
