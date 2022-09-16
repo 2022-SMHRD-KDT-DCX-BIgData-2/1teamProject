@@ -209,8 +209,7 @@
             	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
             	<%}
       	}else{
-      		//클릭한 페이지 번호가 마지막 페이지에 근접했을때 그이상으로 출력안되도록 해주는 로직 
-      		 if((pageint%10 != 0)&&((list_length-pageint) < 10)){
+      		 if((pageint%10 != 0)&&(pageint/10 == list_length/10)){
           		int last = pageint/10*10;
           		for(int j = last ;j< list_length;j++){
             	      %>

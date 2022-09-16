@@ -50,15 +50,15 @@
           <a href ="mainPage.jsp" id="hover_event" class="menu_item" ><i class="fa-solid fa-bars"></i> &nbsp;&nbsp;카테고리
           </a>
           <div class="menu_item">
-              이마트
+              <a href="martPage.jsp?martName=이마트">이마트</a>
             </ul>
           </div>
           <div class="menu_item">
-          	  롯데마트
+          	  <a href="martPage.jsp?martName=이마트">롯데마트</a>
             </ul>
           </div>
           <div class="menu_item">
-              최저가 상품
+              <a>최저가 상품</a>
             </ul>
           </div>
         </navbar>
