@@ -51,10 +51,10 @@
     </header>
     <main>
       <div id="main_box">
-        <div class="main_title"><%=prodName %></div>
+        <div class="main_title3"><%=prodName %></div>
       </div>
     </main>
-    
+    <%@ include file="../html/cart.jsp" %>
      <% ProductDAO dao = new ProductDAO();
      	ArrayList<ProductDTO> list = dao.productSearch(prodName);
 	      System.out.println(prodName);

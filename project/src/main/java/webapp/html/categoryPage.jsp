@@ -55,17 +55,7 @@
         <div class="main_title3"><%=categoryName %></div>
       </div>
     </main>
-	<div id = "cartitem" onchange="">
-		<div class="item"><i class="fa-solid fa-heart"></i> 관심상품 <i class="fa-solid fa-heart"></i></div>
-		<table>
-			<tr>
-				<td>1</td>
-				<td><input type="checkbox" name = "item" class = "checkbox"></td>
-			</tr>
-	
-		</table>
-		<div>총 금액 : </div>
-	</div>
+<%@ include file="../html/cart.jsp" %>
   
      <% ProductDAO dao = new ProductDAO();
      	ArrayList<ProductDTO> list = dao.productList(categoryName);
