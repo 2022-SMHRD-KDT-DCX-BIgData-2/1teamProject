@@ -67,7 +67,7 @@
           <div class="main_title"><%=title[j] %></div>
           <div class="main_contents">
             <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
-            <div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);">
+            <a href="#"><div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);"></a>
             <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
             <p class="mart"><%=dao.mainSug(randomlist[i]).getMartName()%><p>
             <p><%=dao.mainSug(randomlist[i]).getProdName()%><p>

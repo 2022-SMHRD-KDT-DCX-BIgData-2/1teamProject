@@ -241,6 +241,10 @@ header {
 	flex-direction:flex-end;
 	align-items: flex-end;
 	padding-right:10px;
+	transition: all 0.5s;
+}
+.prodImg:hover{
+	background-size: 110%;
 }
 
 .prodImg>button{
