@@ -264,6 +264,10 @@ header {
 	width:3em;
 	margin-bottom:20px;
 	background-color:white;
+	transition: all 0.5s;
+}
+.prodImg>button:hover{
+	background-color: #ff7200;
 }
 .prodImg>button i{
 	font-size:20px;	
