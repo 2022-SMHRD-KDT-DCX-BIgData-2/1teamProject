@@ -63,54 +63,52 @@
 	   try{
 	    if(pageint == 1){  
 	    	int listlength = 0;
-			  if((list.size()%100)%3 == 0){
-				  	listlength = list.size()-2;
-		    	}else if((list.size()%100)%3 == 1){
-		    		listlength = list.size()-1;
+	    	if(list.size() < 100){
+	    		if((list.size()%3) == 0){
+				  	listlength = list.size()-3;
+		    	}else if((list.size()%3) == 1){
+		    		listlength = list.size()-2;
 		    	}else{
-		    		listlength = list.size();
+		    		listlength = list.size()-1;
 		    	}
-	      for(int i = 0 ; i< listlength;i+=3){
+	    	}else{
+	    		listlength = 97;
+	    	}  
+	      for(int i = 0 ; i<= listlength;i+=3){
 	    	  %>
-      <section id="main_container">
-          <div class="main_contents2">
-			<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
-            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-            <p class="mart"><%=list.get(i).getMartName()%></p>
-            <p class="prodName"><%=list.get(i).getProdName()%></p>
-            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
-            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p></a>
-            </div>
-            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
-            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-            <p class="mart"><%=list.get(i+1).getMartName()%></p>
-            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
-            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
-            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p></a>
-            </div>
-            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
-            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
-            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
-            <p class="mart"><%=list.get(i+2).getMartName()%></p>
-            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
-            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
-            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p></a>
-            </div>
-          </div>
-      </section>
-      <%	}
+		      <section id="main_container">
+		          <div class="main_contents2">
+					<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i).getMartName()%></p>
+		            <p class="prodName"><%=list.get(i).getProdName()%></p>
+		            <p class="prodPrice"><%=list.get(i).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+		            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p></a>
+		            </div>
+		            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i+1).getMartName()%></p>
+		            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
+		            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
+		            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p></a>
+		            </div>
+		            <div class="main_item" ><a href=<%=list.get(i).getLink() %>>
+		            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);">
+		            <button onclick=""><i class="fa-solid fa-cart-plus"></i></button></div>
+		            <p class="mart"><%=list.get(i+2).getMartName()%></p>
+		            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
+		            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
+		            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p></a>
+		            </div>
+		          </div>
+		      </section>
+		      <%	}
 	    }else if(pageint == list.size()/100){
 	    	int size =0;
-	    	if((list.size()%100)%3 == 0){
-	    		size = (pageint*100)+(list.size()%100)-2;
-	    	}else if((list.size()%100)%3 == 1){
-	    		size = (pageint*100)+(list.size()%100)-1;
-	    	}else{
-	    		size = (pageint*100)+(list.size()%100);
-	    	}
-	    	for(int i = pageint*100 ; i< size ;i+=3){%>
+	    	size = ((pageint-1)*100)+97;
+	    	for(int i = (pageint-1)*100 ; i< size ;i+=3){%>
       <section id="main_container">
           <div class="main_contents2">
 			<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
@@ -142,7 +140,7 @@
 	      <% }
 	    	}
 	    else{
-    	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
+    	  for(int i = (pageint-1)*100 ; i< ((pageint-1)*100)+97;i+=3){%>
       <section id="main_container">
           <div class="main_contents2">
 			<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
@@ -188,7 +186,7 @@
       <% }else{
       	pagebtn = 1;
       	}%>
-        <a class="page-link" href="categoryPage.jsp?prodName=<%=prodName %>&&pageNum=<%=pagebtn%>" aria-label="Previous">
+        <a class="page-link" href="searchPage.jsp?prodName=<%=prodName %>&&pageNum=<%=pagebtn%>" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
@@ -210,9 +208,9 @@
       			lastPage = 10+pageint;
       		}
           	//입력된 값 + 10 보다 마지막 페이지가 작을 경우 마지막 페이지만 나와주게하는 조건문 생성 
-          		for(int j = pageint ;j< lastPage;j++){
+          		for(int j = pageint ;j<= lastPage;j++){
             	      %>
-            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
+            	      <li class="page-item"><a class="page-link" href="searchPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
             	<%}
       	}else{
       	//클릭한 페이지 번호가 마지막 페이지에 근접했을때 그이상으로 출력안되도록 해주는 로직 
@@ -223,18 +221,18 @@
     			}
           		for(int j = last ;j< list_length;j++){
             	      %>
-            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
+            	      <li class="page-item"><a class="page-link" href="searchPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
             		<%}
           	}
       		 else if (pageint/10 == list_length/10){
           		for(int j = pageint ;j< pageint + list_length%10 ;j++){
           	      %>
-          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
+          	      <li class="page-item"><a class="page-link" href="searchPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
           		<%}
           	}else{
           		for(int j = pageint ;j< 10+pageint;j++){
           	      %>
-          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
+          	      <li class="page-item"><a class="page-link" href="searchPage.jsp?prodName=<%=prodName %>&&pageNum=<%=j%>"><%=j%></a></li>
           		<%
           		}
         	}
@@ -249,7 +247,7 @@
 	  		nextbtn = pageint+10;
 	  	}
       	%>
-        <a class="page-link" href="categoryPage.jsp?prodName=<%=prodName %>&&pageNum=<%=nextbtn%>" aria-label="Next">
+        <a class="page-link" href="searchPage.jsp?prodName=<%=prodName %>&&pageNum=<%=nextbtn%>" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>

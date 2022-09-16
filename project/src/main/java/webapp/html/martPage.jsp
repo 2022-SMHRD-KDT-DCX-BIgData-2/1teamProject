@@ -72,8 +72,20 @@
 	      System.out.println(martName);
 		
 	   try{
-	    if(pageint == 1){  
-	      for(int i = 0 ; i< 97;i+=3){
+		   if(pageint == 1){  
+		    	int listlength = 0;
+		    	if(list.size() < 100){
+		    		if((list.size()%3) == 0){
+					  	listlength = list.size()-3;
+			    	}else if((list.size()%3) == 1){
+			    		listlength = list.size()-2;
+			    	}else{
+			    		listlength = list.size()-1;
+			    	}
+		    	}else{
+		    		listlength = 97;
+		    	}  
+		      for(int i = 0 ; i<= listlength;i+=3){
 	    	  %>
       <section id="main_container">
           <div class="main_contents2">
@@ -106,14 +118,8 @@
       <%	}
 	    }else if(pageint == list.size()/100){
 	    	int size =0;
-	    	if((list.size()%100)%3 == 0){
-	    		size = (pageint*100)+(list.size()%100)-2;
-	    	}else if((list.size()%100)%3 == 1){
-	    		size = (pageint*100)+(list.size()%100)-1;
-	    	}else{
-	    		size = (pageint*100)+(list.size()%100);
-	    	}
-	    	for(int i = pageint*100 ; i< size ;i+=3){%>
+	    	size = ((pageint-1)*100)+97;
+	    	for(int i = (pageint-1)*100 ; i< size ;i+=3){%>
       <section id="main_container">
           <div class="main_contents2">
 			<div class="main_item" ><a href=<%=list.get(i).getLink() %>>
