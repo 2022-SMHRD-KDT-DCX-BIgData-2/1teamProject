@@ -143,7 +143,7 @@ public class ProductDAO {
 		return list;
 	}
 	
-	//마트이름 기준으으로 상품정보를 받아오는 로직 작동 형식은 위 DAO 로직과 동일함 
+	//마트이름 기준으로 상품정보를 받아오는 로직 작동 형식은 위 DAO 로직과 동일함 
 	public ArrayList<ProductDTO> martprod(String martName){
 		String SQL = "select * from "+martName+";";
 		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
@@ -169,5 +169,67 @@ public class ProductDAO {
 		return list;
 	}
 	
+	
+
+	public ArrayList<ProductDTO> lowestAll(){
+		String SQL = "select\n"
+				+ "if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.prodCode,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.prodCode,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.prodCode,emart.prodCode))) as prodCode\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.martName,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.martName,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.martName,emart.martName))) as martName\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.categoryName,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.categoryName,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.categoryName,emart.categoryName))) as categoryName\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.prodName,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.prodName,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.prodName,emart.prodName))) as prodName\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.prodPrice,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.prodPrice,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.prodPrice,emart.prodPrice))) as prodPrice\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.prodImage,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.prodImage,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.prodImage,emart.prodImage))) as prodImage\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.link,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.link,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.link,emart.link))) as link\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.prodStar,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.prodStar,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.prodStar,emart.prodStar))) as prodStar\n"
+				+ "\n"
+				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.prodReview,\n"
+				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.prodReview,\n"
+				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.prodReview,emart.prodReview))) as prodReview\n"
+				+ "from emart inner join lotte on emart.prodName=lotte.prodName inner join homeplus on lotte.prodName= homeplus.prodName;";
+		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO();
+				dto.setProdCode(rs.getInt(1));
+				dto.setMartName(rs.getString(2));
+				dto.setCategoryName(rs.getString(3));
+				dto.setProdName(rs.getString(4));
+				dto.setProdPrice(rs.getInt(5));
+				dto.setProdImage(rs.getString(6));
+				dto.setLink(rs.getString(7));
+				dto.setProdStar(rs.getFloat(8));
+				dto.setProdReview(rs.getInt(9));
+				list.add(dto);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 }

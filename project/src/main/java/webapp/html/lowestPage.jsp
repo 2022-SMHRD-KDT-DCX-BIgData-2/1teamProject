@@ -7,22 +7,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <%
-	String categoryName = null;
-	if(request.getParameter("categoryName")!=null){
-		categoryName = (String)request.getParameter("categoryName");
-	}
 	String pageNum = null;
 	int pageint = 1;
 	if(request.getParameter("pageNum") !=null){
 		pageNum = (String)request.getParameter("pageNum");
 		pageint = Integer.parseInt(pageNum);
-	}
+	}	
 %>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>카테고리별</title>
+    <title>최저가 상품</title>
     <script
       src="https://kit.fontawesome.com/20629bba5a.js"
       crossorigin="anonymous"
@@ -49,14 +45,14 @@
     
     <main>
       <div id="main_box">
-        <div class="main_title3"><%=categoryName %></div>
+        <div class="main_title3">최저가 상품</div>
       </div>
     </main>
 <%@ include file="../html/cart.jsp" %>
   
      <% ProductDAO dao = new ProductDAO();
-     	ArrayList<ProductDTO> list = dao.productList(categoryName);
-	      System.out.println(categoryName);
+     	ArrayList<ProductDTO> list = dao.lowestAll();
+	      System.out.println();
 		
 	   try{
 		   if(pageint == 1){  
@@ -202,7 +198,7 @@
       <% }else{
       	pagebtn = 1;
       	}%>
-        <a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=pagebtn%>" aria-label="Previous">
+        <a class="page-link" href="lowestPage.jsp?pageNum=<%=pagebtn%>" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
@@ -226,7 +222,7 @@
           	//입력된 값 + 10 보다 마지막 페이지가 작을 경우 마지막 페이지만 나와주게하는 조건문 생성 
           		for(int j = pageint ;j< lastPage;j++){
             	      %>
-            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+            	      <li class="page-item"><a class="page-link" href="lowestPage.jsp?pageNum=<%=j%>"><%=j%></a></li>
             	<%}
       	}else{
       		//클릭한 페이지 번호가 마지막 페이지에 근접했을때 그이상으로 출력안되도록 해주는 로직 
@@ -237,18 +233,18 @@
      			}
           		for(int j = last ;j< list_length;j++){
             	      %>
-            	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+            	      <li class="page-item"><a class="page-link" href="lowestPage.jsp?pageNum=<%=j%>"><%=j%></a></li>
             		<%}
           	}
       		 else if (pageint/10 == list_length/10){
           		for(int j = pageint ;j< pageint + list_length%10 ;j++){
           	      %>
-          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+          	      <li class="page-item"><a class="page-link" href="lowestPage.jsp?pageNum=<%=j%>"><%=j%></a></li>
           		<%}
           	}else{
           		for(int j = pageint ;j< 10+pageint;j++){
           	      %>
-          	      <li class="page-item"><a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=j%>"><%=j%></a></li>
+          	      <li class="page-item"><a class="page-link" href="lowestPage.jsp?pageNum=<%=j%>"><%=j%></a></li>
           		<%
           		}
         	}
@@ -263,7 +259,7 @@
       		nextbtn = pageint+10;
       	}
       	%>
-        <a class="page-link" href="categoryPage.jsp?categoryName=<%=categoryName %>&&pageNum=<%=nextbtn%>" aria-label="Next">
+        <a class="page-link" href="lowestPage.jsp?pageNum=<%=nextbtn%>" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>

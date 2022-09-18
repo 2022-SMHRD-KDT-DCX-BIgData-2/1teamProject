@@ -84,18 +84,4 @@ let banner = setInterval(() => {
   }
 }, 5000);
 //1000ms = 1초
-
 //업로드 확인
-
-$(function() {
-	$.fn.Scrolling = function(obj, tar) {
-		var _this = this;
-		$(window).scroll(function(e) {
-			var end = obj + tar;
-			$(window).scrollTop() >= obj ? _this.addClass("fixed") : _this.removeClass("fixed");
-			if($(window).scrollTop() >= end) _this.removeClass("fixed");
-		});
-	};
- 
-	$("#cartitem").Scrolling($("#cartitem").offset().top, ($(".aa").height() - $("#test1").height()));
-});

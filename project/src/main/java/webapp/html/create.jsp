@@ -44,7 +44,7 @@
               placeholder="아이디를 입력해주세요"
             />
           </div>
-          <div><button type="button" class="idBtn">중복확인</button></div>
+          <div><button type="button" class="idBtn" onclick="idcheck()">중복확인</button></div>
         </div>
         <div class="bigbox2">
           <div class="smallbox1"><label>비밀번호</label></div>
@@ -136,7 +136,7 @@
         <div class="footer_box">
           <div>
             스마트인재 개발원<span style="font-size: 18px">
-              tell ) 070-4120-6295</span
+              tel ) 070-4120-6295</span
             >
           </div>
           <div>K-Digital Training</div>

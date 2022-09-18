@@ -1,4 +1,5 @@
 /*css 초기화*/
+
 * {
   margin: 0;
   padding: 0;
@@ -78,19 +79,19 @@ header {
   font-size: 20px;
   font-weight: 500;
   color: black;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .menu_item > a{
 	text-decoration: none;
-	transition: all 1s;
+	transition: all 0.5s;
 	color: black;
 }
 .menu_item >a:hover {
-  color: gray;
+  color: green;
 }
 
 .menu_item:hover {
-  color: gray;
+  color: green;
 }
 
 #menu_bar {
@@ -128,65 +129,16 @@ header {
 .carousel-item>img{
 	height:350px;
 }
+.carousel-control-next-icon, .carousel-control-prev-icon{
+	position:relative;
+	top:150px;
+}
 #container {
   padding-top: 180px;
   width: 1440px;
   margin: 0 auto;
 }
 
-#banner {
-  width: 100%;
-  height: 370px;
-  background-color: beige;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#bannerBox {
-  width: 1080px;
-  overflow: hidden;
-}
-
-#bannerBox > ul {
-  list-style: none;
-  width: 1080px;
-  height: 370px;
-  transition: all 1s;
-  display: inline-flex;
-}
-
-#bannerBox > ul > li {
-  min-width: 1080px;
-  min-height: 370px;
-  text-align: center;
-  color: #000;
-}
-
-#bannerBox > ul > li:first-child {
-  background-color: orange;
-}
-
-#bannerBox > ul > li:nth-child(2) {
-  background-color: #ad2324;
-}
-
-#bannerBox > ul > li:nth-child(3) {
-  background-color: #cbccdb;
-}
-
-#bannerBox > ul > li:last-child {
-  background-color: #faa234;
-}
-
-#prevBtn,
-#nextBtn {
-  cursor: pointer;
-  border: 1px solid #adff2f;
-  width: 3rem;
-  height: 3rem;
-  z-index: 999;
-}
 /*main contents*/
 #main_container {
   width: 1440px;
@@ -202,7 +154,7 @@ header {
   margin-left:410px;
   text-align: center;
   background-color: white;
-  font-size: 2em;
+  font-size: 1.7em;
   border-bottom: 3px solid #ff7200;
 }
 .main_title {
@@ -213,7 +165,7 @@ header {
   line-height: 100px;
   text-align: center;
   background-color: white;
-  font-size: 2em;
+  font-size: 1.7em;
   border-bottom: 3px solid #ff7200;
 }
 .main_contents {
@@ -238,24 +190,28 @@ header {
   /*border: 1px solid gray;*/
   transition: all 1s;
   padding-top:10px;
+  margin-left:30px;
 }
+
 .prodImg{
 	background-size:100%;
 	background-repeat:no-repeat;
 	background-position:center;
 	width:310px; 
 	height:330px;
+	
 	display:flex;
 	justify-content:flex-end;
 	flex-direction:flex-end;
 	align-items: flex-end;
 	padding-right:10px;
 	transition: all 0.5s;
+	
 }
 .prodImg:hover{
 	background-size: 110%;
 }
-
+/*
 .prodImg>button{
 	position:absolute;
 	border:1px solid gray;
@@ -266,6 +222,7 @@ header {
 	background-color:white;
 	transition: all 0.5s;
 }
+
 .prodImg>button:hover{
 	background-color: #ff7200;
 }
@@ -274,6 +231,7 @@ header {
 	color:black;
 	margin:auto;
 }
+*/
 .mart{
 	color : blue;
 	font-size:14px;
@@ -364,8 +322,7 @@ header {
 .pagination>li{
 	color:black;
 }
-@media screen {
-}
+
 /*페이지 맨위로 */
 #page_up {
   width: 70px;
@@ -378,8 +335,8 @@ header {
   color: black;
   font-weight: 600;
   position: fixed;
-  right: 40px;
-  bottom: 50px;
+  right: 48px;
+  top: 750px;
   cursor: pointer;
   opacity: 0;
   transition: all 1s;
@@ -394,8 +351,8 @@ header {
 .bigbox3{
 	padding:0px;
 }
+/*******************************************/
 /*categoryPage.css 합침*/
-
 #main_box {
   /*display: flex;
   justify-content: center;*/
@@ -421,7 +378,7 @@ header {
   margin-bottom: 70px;
   border-bottom: 4px solid green;
   text-align: center;
-  font-size: 35px;
+  font-size: 33px;
   line-height: 80px;
 }
 #prodImg2 {
@@ -432,23 +389,87 @@ header {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-/*관심상품 박스*/
-#cartitem{
-	position:fixed;
-	z-index:1020;
-	border:2px solid lightgray;
-	height:300px;
-	width:290px;
-	right:50px;
-	padding: 10px;
-	background-color:white;
+/*********************************************************/
+/*loginPage.css 합침*/
+#mainbox {
+  top: 200px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.item{
-border-bottom:1px solid lightgray;
-text-align:center;	
-padding:5px;
-margin-bottom:10px;
+.bigbox {
+  top: 250px;
+  height: 550px;
+  width: 100%;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://i.pinimg.com/564x/89/7b/6c/897b6ce3ef63ffa879db6e39976e6139.jpg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
 }
+a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+.login {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 20px;
+  padding-bottom: 20px;
+  color: white;
+}
+.inputBox2 {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin: 7px 0px;
+  font-size: 16px;
+  border: 1px solid rgb(221, 221, 221);
+}
+.find {
+  margin: 5px 0px;
+  text-align: right;
+}
+.find > a {
+  font-size: 15px;
+  right: 0px;
+  color: white;
+}
+.find > a:hover {
+  color: orange;
+}
+.loginBtn2 > button {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px 0px;
+  background-color: #0d6734;
+  border: 1px solid #0d6734;
+  border-radius: 4px;
+  font-size: 18px;
+  color: white;
+}
+#navber {
+  background-color: hsl(32, 94%, 93%);
+  height: 50px;
+}
+#form {
+  width: 300px;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/********************************************************8***/
 @media (max-width:425px){
 html{
 	width:100%;
@@ -485,6 +506,8 @@ body{
   font-size: 13px;
 }
 }
+
+/*********************************************************/
 @media (max-width:768px) {
   #Search_bar {
     height: 55px;
@@ -607,7 +630,7 @@ body{
   line-height: 100px;
   text-align: center;
   background-color: white;
-  font-size: 2em;
+  font-size: 1.7em;
   border-bottom: 3px solid #ff7200;
 }
 .prodImg{

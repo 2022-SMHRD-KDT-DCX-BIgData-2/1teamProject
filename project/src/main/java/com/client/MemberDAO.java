@@ -63,5 +63,23 @@ public class MemberDAO{
 		      return -1;
 		   }
 		
+		//아이디 중복체크..
+		public boolean idcheck(String userid) {	
+			String SQL = "SELECT userid from memberDB";
+			try {
+				pstmt = conn.prepareStatement(SQL); 
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					if(rs.getString("userid").equals(userid)) {
+						return true;
+					}
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return false;
+			
+		}
 	}
 	

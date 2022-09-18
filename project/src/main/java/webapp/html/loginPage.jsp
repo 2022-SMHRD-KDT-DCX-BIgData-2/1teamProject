@@ -11,49 +11,49 @@
       src="https://kit.fontawesome.com/20629bba5a.js"
       crossorigin="anonymous"
     ></script>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $("#header").load("../html/header.jsp"); // 원하는 파일 경로를 삽입
-      });
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#header").load("../html/header.jsp"); // 원하는 파일 경로를 삽입
+      });
+    </script>
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/loginPage.css" />
   </head>
   <body>
     <header>
       <div id="header"></div>
     </header>
-    <main>
+    <main id="mainbox">
       <div class="bigbox">
         <form action="../loginAction.jsp" method="post">
-          <div class="login">로그인</div>
+       	<div id = "form">
+          <div class="login">로 그 인</div>
           <%
 			String userid =null;
 			if(session.getAttribute("userid")!=null){
 				userid = (String)session.getAttribute("userid");
           %>
-	          <div>
-	            <input
-	              type="text"
-	              name="userid"
-	              class="inputBox"
-	              placeholder="아이디를 입력하세요"
-	              value="<%=userid %>"
-	            />
-	          </div>
+          <div>
+            <input
+              type="text"
+              name="userid"
+              class="inputBox2"
+              placeholder="아이디를 입력하세요"
+              value="<%=userid %>"
+            />
+          </div>
           <%}else{ %>
           <div>
             <input
               type="text"
               name="userid"
-              class="inputBox"
+              class="inputBox2"
               placeholder="아이디를 입력하세요"
             />
           </div>
@@ -62,7 +62,7 @@
             <input
               type="password"
               name="pwd"
-              class="inputBox"
+              class="inputBox2"
               placeholder="비밀번호를 입력하세요"
             />
           </div>
@@ -70,18 +70,20 @@
             <a href="#">아이디 찾기</a>&nbsp;
             <a href="#">비밀번호 찾기</a>
           </div>
-          <div class="loginBtn">
+          <div class="loginBtn2">
             <button type="submit"><div>로그인</div></button><br />
-            <button type="submit">회원가입</button>
+            <button><a href = "create.jsp" style="color:white;">회원가입</a></button>
           </div>
+        </div>
         </form>
       </div>
     </main>
+    
     <footer id="main_footer">
       <div class="footer_box">
         <div>
           스마트인재 개발원<span style="font-size: 18px">
-            tell ) 070-4120-6295</span
+            tel ) 070-4120-6295</span
           >
         </div>
         <div>K-Digital Training</div>
@@ -109,7 +111,5 @@
         <a href=""><i class="fa-brands fa-square-js"></i></a>
       </div>
     </footer>
-   
-   
   </body>
 </html>

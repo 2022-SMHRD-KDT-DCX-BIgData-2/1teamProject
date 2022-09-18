@@ -15,7 +15,7 @@
   </head>
 <body>
 <%	
-//세션값에 들어있는 로그인 정보를 가져오는 로직 입니다!! 
+//세션값에 들어있는 로그인 정보를 가져오는 로직
 	String userid = null;
 	if(session.getAttribute("userid") != null ){
 		userid = (String)session.getAttribute("userid");
@@ -42,7 +42,7 @@
           <div id="login_sign">
           	<a href="#"><%=userid %>님 안녕하세요</a>
             <a href="../logout.jsp"> 로그아웃</a>
-            <a href="#">관심상품</a>
+            <a href="cartPage.jsp">관심상품</a>
             <i class="fa-solid fa-cart-shopping cart-icon"></i>
              </div>
           <%} %>
@@ -65,7 +65,7 @@
             </ul>
           </div>
           <div class="menu_item">
-              <a>최저가 상품</a>
+              <a href="lowestPage.jsp">최저가 상품</a>
             </ul>
           </div>
         </navbar>
