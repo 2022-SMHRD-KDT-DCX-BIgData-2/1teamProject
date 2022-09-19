@@ -45,7 +45,7 @@ public class CartDAO {
 	      return -1;
 	}
 	public ArrayList<CartDTO> cartlist(String userid){
-		String SQL = "select * from cart where userId=?";
+		String SQL = "select * from cart where userId=? order by martName";
 		ArrayList<CartDTO> list = new ArrayList<CartDTO>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -68,7 +68,26 @@ public class CartDAO {
 		}
 		return list;
 	}
-
+	
+	//마트 가격
+	public int martPrice(int prodPrice){
+		String SQL = "select sum(prodPrice) from cart where userid = ? and martName = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1 , prodPrice);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				CartDTO dto = new CartDTO();
+				dto.setProdPrice(rs.getInt(1));
+				dto.setUserid(rs.getString(2));
+				dto.setMartName(rs.getString(3));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	
 	public int delete(int prodCode){
 		String SQL = "delete from cart where prodCode=?";

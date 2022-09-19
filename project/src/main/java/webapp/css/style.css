@@ -233,12 +233,12 @@ header {
 }
 */
 .mart{
-	color : blue;
+	color :darkblue;
 	font-size:14px;
 }
 .prodPrice{
 	font-weight: bold;
-	color:blue;
+	color:darkblue;
 }
 .prodName{
 	color:black;

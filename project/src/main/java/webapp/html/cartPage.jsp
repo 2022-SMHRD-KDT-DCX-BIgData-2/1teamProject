@@ -15,17 +15,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>관심상품 페이지 ! </title>
-    <script
-      src="https://kit.fontawesome.com/20629bba5a.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>관심상품 페이지</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/20629bba5a.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
@@ -99,9 +99,11 @@ bottom:0px;
 }
 .addbox{
 border:1px solid lightgray; 
-width:300px; 
+border-radius:4px;
+width:310px; 
 height:400px;
-margin:50px 50px;
+margin:50px 40px;
+padding:5px;
 }
 table p{
 text-align:left;
@@ -111,6 +113,20 @@ width:150px;
 }
 #address, #extraAddress, #detailAddress{
 width:280px;
+}
+ul li>input{
+margin: 5px 5px;
+padding:3px 8px;
+border: 1px solid #f2f2f2;
+border-radius:4px;
+}
+#findadd{
+background-color:#f2f2f2;
+}
+.martname{
+font-size:1px;
+font-weight:bold;
+padding:8px 15px;
 }
 </style>
   
@@ -156,23 +172,41 @@ width:280px;
 	    </table>
 	  </div> 
     <div class="addbox">
-    <table>
-             <tr>                 
-             	<td>
-             		
-             		<p>
-             			<input type = "text" name = "zipCode" id = "postcode" placeholder = "우편번호"/>
-             			<input type = "button" onclick = "execDaumPostcode()" value = "우편번호 찾기"/>
-             		</p>
-             		<p>
-             			<input type = "text" name = "userAddr1" id = "address" size = "100" placeholder = "주소"/><br>
-             			<input type = "text" name = "userAddr3" id = "extraAddress" size = "48" placeholder = "참고항목(도로명인 경우 : 지역 동이름과 아파트 이름)"/>
-             			<input type = "text" name = "userAddr2" id = "detailAddress" size = "45" placeholder = "상세주소(아파트 동호수 또는 빌딩이름 입력)"/>
-             		</p>
+    <div style="padding:15px;">배송지 &nbsp;<i class="fa-solid fa-location-dot"></i></div>
+    <ul>
+   		<li>
+   			<input type = "text" name = "zipCode" id = "postcode" placeholder = "우편번호"/>
+   			<input type = "button" id = "findadd" onclick = "execDaumPostcode()" value = "주소 검색"/>
+   		</li>
+   		<li>
+   			<input type = "text" name = "userAddr1" id = "address" size = "100" placeholder = "주소"/><br>
+   			<input type = "text" name = "userAddr3" id = "extraAddress" size = "48" placeholder = "참고항목"/>
+   			<input type = "text" name = "userAddr2" id = "detailAddress" size = "45" placeholder = "상세주소"/>
+   		</li>
+   	<div style="padding:15px;">전체금액 &nbsp;<i class="fa-solid fa-wallet"></i></div>
+   	<div style="margin:0px 32px;">
+	<table style="text-align:center;">
+		<tr>
+			<td></td>
+			<td style="width:130px;">금액</td>
+		</tr>
+		<tr>
+			<td style="width:100px;padding: 2px">롯데마트</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="width:100px;padding: 2px">이마트</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="width:100px;padding: 2px">홈플러스</td>
+			<td></td>
+		</tr>
+	</table>
+	</div>
 	<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
 	<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
 	</div>
-	
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script>
 	    // 우편번호 찾기 화면을 넣을 element
@@ -249,7 +283,7 @@ width:280px;
 	    function initLayerPosition(){
 	        var width = 300; //우편번호서비스가 들어갈 element의 width
 	        var height = 400; //우편번호서비스가 들어갈 element의 height
-	        var borderWidth = 5; //샘플에서 사용하는 border의 두께
+	        var borderWidth = 1.5; //샘플에서 사용하는 border의 두께
 	
 	        // 위에서 선언한 값들을 실제 element에 넣는다.
 	        element_layer.style.width = width + 'px';
@@ -257,15 +291,13 @@ width:280px;
 	        element_layer.style.border = borderWidth + 'px solid';
 	        // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
 	        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
-	        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+	        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth+20) + 'px';
 	    }
 	</script>                  		
-             		
-             	</td>
-             </tr> 
-    </table>
+   
     </div>
     </main>
+    
       <footer id="main_footer">
         <div class="footer_box">
           <div>

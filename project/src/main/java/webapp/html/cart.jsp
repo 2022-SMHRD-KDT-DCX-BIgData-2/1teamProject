@@ -55,7 +55,7 @@ padding:3px;
 table td:nth-child(1){
 font-size:7px;
 width:45px;
-color:blue;
+color:darkblue;
 }
 table td:nth-child(2){
 font-size:7px;

@@ -9,23 +9,22 @@
 <style>
 button{
 position:relative;
-right:45px;
+right:40px;
 top:278px;
 border-radius:50%;
 font-size:20px;
 height:2em;
-width:2.5em;
+width:2em;
 background-color:white;
-border:1px solid gray;
+border:1px solid lightgray;
+color:tomato;
 }
 button:hover{
-color:orange;
+color:darkorange;
 }
 </style>
 <body>
-	
-		<button type="submit" name="cartBtn" id="cartBtn" value="버튼"><i class="fa-solid fa-cart-plus"></i></button>
-	
+	<button type="submit" name="cartBtn" id="cartBtn" value="버튼"><i class="fa-solid fa-heart"></i></button>
 </body>
 
 </html>
