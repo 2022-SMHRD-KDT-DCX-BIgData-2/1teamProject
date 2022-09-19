@@ -83,7 +83,7 @@
       <div class="footer_box">
         <div>
           스마트인재 개발원<span style="font-size: 18px">
-            tel ) 070-4120-6295</span
+            tell ) 070-4120-6295</span
           >
         </div>
         <div>K-Digital Training</div>

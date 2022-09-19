@@ -35,7 +35,7 @@
           <div id="login_sign">
             <a href="loginPage.jsp">로그인</a>
             <a href="create.jsp"> 회원가입</a>
-            <a href="#">관심상품</a>
+            <a href="cartPage.jsp">관심상품</a>
             <i class="fa-solid fa-cart-shopping cart-icon"></i>
           </div>
           <%}else{ %>

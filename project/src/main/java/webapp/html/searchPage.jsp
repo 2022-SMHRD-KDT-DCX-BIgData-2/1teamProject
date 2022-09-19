@@ -152,7 +152,7 @@
 	      <% }
 	    	}
 	    else{
-    	  for(int i = (pageint-1)*100 ; i< ((pageint-1)*100)+97;i+=3){%>
+	    	for(int i = (pageint-1)*100 ; i< ((pageint-1)*100)+97;i+=3){%>
       <section id="main_container">
           <div class="main_contents2">
             <div class="main_item" >

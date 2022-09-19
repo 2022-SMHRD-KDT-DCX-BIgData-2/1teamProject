@@ -74,18 +74,21 @@
 		    	}  
 		      for(int i = 0 ; i<= listlength;i+=3){
 	    	  %>
+	  
       <section id="main_container">
+      <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
           <div class="main_contents2">
             <div class="main_item" >
-           		<a href=<%=list.get(i).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);"></div>           
-	            <p class="mart"><%=list.get(i).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+           		<a href=<%=list.get(i).getLink()%>><input type="text" name="link" value="<%=list.get(i).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i).getMartName()%><input type="text" name="martName" value="<%=list.get(i).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i).getProdName()%><input type="text" name="prodName" value="<%=list.get(i).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i).getProdPrice()%>" style="display: none;"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p>
 	       		</a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
             <a href=<%=list.get(i+1).getLink() %>>
 	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"></div>         
@@ -150,7 +153,7 @@
 	      <% }
 	    	}
 	    else{
-    	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
+	    	for(int i = (pageint-1)*100 ; i< ((pageint-1)*100)+97;i+=3){%>
 		      <section id="main_container">
 		          <div class="main_contents2">
 		            <div class="main_item" >

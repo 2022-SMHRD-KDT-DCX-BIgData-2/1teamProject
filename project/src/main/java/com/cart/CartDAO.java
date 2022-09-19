@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.product.ProductDTO;
 
 public class CartDAO {
 	private Connection conn;
@@ -24,47 +27,45 @@ public class CartDAO {
 		}
 	}
 	
-	
-	public int check(CartDTO dto) {
-		String SQL= "SELECT * FROM product WHERE userid= ?";
-		try {
-	        pstmt.setString(1, dto.getUserid());
-	        pstmt.setString(2, dto.getMartName());
-	        pstmt.setString(3, dto.getProdImage());
-	        pstmt.setString(4, dto.getProdName());
-	        pstmt.setInt(5, dto.getProdPrice()); 
-			rs= pstmt.executeQuery();
-			if(rs.next()) {
-				if(rs.getString(1) == dto.getPwd())
-					return 1; 
-				else
-					return 0; 
-			}
-			return -1; // 아이디 없음
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return -2; //DB연결 오류
-	}		
-	
-	
-	public int add(CartDTO dto) {
-		String SQL = "INSERT INTO cart VALUES (?,?,?,?,?)";
+	public int add(String userId, String martName, String prodImage,String prodName,int prodPrice, String link ) {
+		String SQL = "INSERT INTO cart VALUES (?,?,?,?,?,?)";
+		
 		try {
 			pstmt = conn.prepareStatement(SQL); 
-	        pstmt.setString(1, dto.getUserid());
-	        pstmt.setString(2, dto.getMartName());
-	        pstmt.setString(3, dto.getProdImage());
-	        pstmt.setString(4, dto.getProdName());
-	        pstmt.setInt(5, dto.getProdPrice()); 
-	        
+	        pstmt.setString(1, userId);
+	        pstmt.setString(2, martName);
+	        pstmt.setString(3, prodImage);
+	        pstmt.setString(4, prodName);
+	        pstmt.setInt(5, prodPrice);
+	        pstmt.setString(6,link);
 	        return pstmt.executeUpdate();
 		}catch (Exception e) {
 	    	  e.printStackTrace();
 	      }
 	      return -1;
 	}
-	
+	public ArrayList<CartDTO> cartlist(String userid){
+		String SQL = "select * from cart where userId=?";
+		ArrayList<CartDTO> list = new ArrayList<CartDTO>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1 , userid);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				CartDTO dto = new CartDTO();
+				dto.setUserid(rs.getString(1));
+				dto.setMartName(rs.getString(2));
+				dto.setProdImage(rs.getString(3));
+				dto.setProdName(rs.getString(4));
+				dto.setProdPrice(rs.getInt(5));
+				dto.setLink(rs.getString(6));
+				list.add(dto);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	public int delete(CartDTO dto) {
 		String SQL = "DELETE * FROM cart WHERE userid=?";
 		try {
@@ -74,7 +75,6 @@ public class CartDAO {
 	        pstmt.setString(3, dto.getProdImage());
 	        pstmt.setString(4, dto.getProdName());
 	        pstmt.setInt(5, dto.getProdPrice()); 
-	        
 	        return pstmt.executeUpdate();
 		}catch (Exception e) {
 	    	  e.printStackTrace();

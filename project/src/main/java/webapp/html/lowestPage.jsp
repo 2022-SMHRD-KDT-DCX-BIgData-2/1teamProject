@@ -146,7 +146,7 @@
 	      <% }
 	    	}
 	    else{
-    	  for(int i = pageint*100 ; i< (pageint*100)+97;i+=3){%>
+    	  for(int i = (pageint-1)*100 ; i< ((pageint-1)*100)+97;i+=3){%>
 		      <section id="main_container">
 		          <div class="main_contents2">
 		            <div class="main_item" >
@@ -231,7 +231,7 @@
      			if(pageint > 10){
      				last = pageint/10*10;
      			}
-          		for(int j = last ;j< list_length;j++){
+          		for(int j = last ;j<= list_length;j++){
             	      %>
             	      <li class="page-item"><a class="page-link" href="lowestPage.jsp?pageNum=<%=j%>"><%=j%></a></li>
             		<%}

@@ -1,12 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%request.setCharacterEncoding("UTF-8"); %>
+       <%@ page import="java.util.*" %>
+    <%@page import="com.product.ProductDAO" %>
+    <%@page import="com.product.ProductDTO" %>
+    <%@page import="com.client.MemberDTO" %>
+    <%@page import="com.client.MemberDAO" %>
+    <%@page import="com.cart.CartDAO" %>
+    <%@page import="com.cart.CartDTO" %>
+    <%@page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>회원가입</title>
+    <title>관심상품 페이지 ! </title>
     <script
       src="https://kit.fontawesome.com/20629bba5a.js"
       crossorigin="anonymous"
@@ -56,44 +65,44 @@ width:180px;
  bottom:0px;
  }
   </style>
+  
+  <%	
+//세션값에 들어있는 로그인 정보를 가져오는 로직
+	String userid = null;
+	if(session.getAttribute("userid") != null ){
+		userid = (String)session.getAttribute("userid");
+	}else{
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인이 필요한 서비스 입니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+	}
+	CartDAO dao = new CartDAO();
+	ArrayList<CartDTO> list = dao.cartlist(userid);
+%>
   <body>
     <header>
       <div id="header"></div>
     </header>
     <main>
-	 <div id = "martbox">
-	   	<div class="line">롯데마트</div>
+	 <div id = "martbox"  style="overflow:scroll; width:350px; height:200px;">
+	 
+	   	<div class="line" >관심상품목록</div>
 	    <table>
+	    <%for(int i = 0 ; i <list.size();i++ ){
+	    	%>
 	      	<tr>
 	      		<td><input type="checkbox"></td>
-	      		<td>사진</td> <!-- 이미지 -->
-	      		<td>초콜릿</td> <!-- 상품명 -->
-	      		<td>12,000원</td> <!-- 가격 -->
+	      		<td><%=list.get(i).getMartName() %></td> <!-- 마트이름 -->
+	      		<td><img src=<%=list.get(i).getProdImage() %>></td> <!-- 마트이미지 -->
+	      		<td><%=list.get(i).getProdName() %></td> <!-- 가격 -->
+	      		<td><%=list.get(i).getProdPrice() %></td> <!-- 가격 -->
+	      		<td><a href=<%=list.get(i).getLink() %>>상품링크</td> <!-- 가격 -->
 	      		<td><input type="button" value="제거"></td>
 	      	</tr>
-	    </table><br><br>
-	    <div class="line">홈플러스</div>
-	    <table>
-	      	<tr>
-	      		<td><input type="checkbox"></td>
-	      		<td>d</td>
-	      		<td>ㅇ</td>
-	      		<td>ㅇ</td>
-	      		<td>ㅇ</td>
-	      		<td><input type="button" value="제거"></td>
-	      	</tr>
-	      </table><br><br>
-	      <div class="line">이마트</div>
-		    <table>
-	      	<tr>
-	      		<td><input type="checkbox"></td>
-	      		<td>d</td>
-	      		<td>ㅇ</td>
-	      		<td>ㅇ</td>
-	      		<td>ㅇ</td>
-	      		<td><input type="button" value="제거"></td>
-	      	</tr>
-	      </table>
+	      	<% }%>
+	    </table>
 	  </div>
     </main>
       <footer id="main_footer">
