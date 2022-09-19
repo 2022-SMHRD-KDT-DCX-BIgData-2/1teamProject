@@ -35,10 +35,13 @@
 
   </head>
   <style>
+  #martbox::-webkit-scrollbar {
+    display: none;
+}
 main{
  position:relative;
  top:250px;
- margin: 0px 50px;
+ margin: 0px auto;
  width:800px;
  height:800px;
  text-align:left;

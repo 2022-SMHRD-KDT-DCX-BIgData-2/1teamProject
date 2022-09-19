@@ -68,8 +68,13 @@ background-color:white;
 	ArrayList<CartDTO> list2 = dao2.cartlist(userid);
 	
 %>
+<style>
+#cartitem::-webkit-scrollbar {
+    display: none;
+}
+</style>
 <body>
-	<div id = "cartitem" style="overflow:scroll; width:290ㅔㅌ; height:300px;">
+	<div id = "cartitem" style="overflow-y:scroll; width:290ㅔㅌ; height:300px;">
 		<div class="item"><i class="fa-solid fa-heart like"></i> 관심상품 <i class="fa-solid fa-heart like"></i></div>
 	    <table>
 	    <%if(userid != null){
@@ -94,5 +99,18 @@ background-color:white;
 	    </table>
 		
 	</div>
+	        <script type="text/javascript">
+  window.addEventListener("scroll", (e) => {
+	  const x = this.scrollX;
+	  const y = this.scrollY;
+	  const cartitem = document.getElementById("cartitem");
+  	console.log(y);
+  	if(y > 300){
+  		cartitem.style.top = "150px";
+  	}else{
+  		cartitem.style.top = "300px";
+  	}
+  });
+  </script>
 </body>
 </html>

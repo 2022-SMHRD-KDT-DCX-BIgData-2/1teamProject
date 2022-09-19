@@ -22,15 +22,15 @@ let ScorllY = 380;
 addEventListener("scroll", () => {
   const pageScorll = window.scrollY;
   const main_header = document.getElementById("main_header");
-  const scroll_input = document.getElementById("scroll_input");
+ 
   if (ScorllY <= pageScorll) {
     pagecontroller.style.opacity = "1";
     main_header.style.display = "none";
-    scroll_input.style.display = "block";
+   
   } else {
     pagecontroller.style.opacity = "0";
     main_header.style.display = "flex";
-    scroll_input.style.display = "none";
+  
   }
 });
 /**
