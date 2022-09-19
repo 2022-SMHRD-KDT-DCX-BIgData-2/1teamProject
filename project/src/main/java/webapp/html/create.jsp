@@ -40,11 +40,12 @@
             <input
               type="text"
               name="userid"
+              id="userid"
               class="inputBox"
               placeholder="아이디를 입력해주세요"
             />
           </div>
-          <div><button type="button" class="idBtn" onclick="idcheck()">중복확인</button></div>
+          <div><button type="button" class="idBtn" id="btnIdCheck" onclick="idcheck()">중복확인</button></div>
         </div>
         <div class="bigbox2">
           <div class="smallbox1"><label>비밀번호</label></div>

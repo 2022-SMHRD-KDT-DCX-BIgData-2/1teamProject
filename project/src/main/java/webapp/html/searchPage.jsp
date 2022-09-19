@@ -79,35 +79,41 @@
       <section id="main_container">
           <div class="main_contents2">
             <div class="main_item" >
-           		<a href=<%=list.get(i).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);"></div>           
-	            <p class="mart"><%=list.get(i).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+           	<a href=<%=list.get(i).getLink()%>><input type="text" name="link" value="<%=list.get(i).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i).getMartName()%><input type="text" name="martName" value="<%=list.get(i).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i).getProdName()%><input type="text" name="prodName" value="<%=list.get(i).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i).getProdPrice()%>" style="display: none;"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p>
-	       		</a>
+	       	</a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
-            <a href=<%=list.get(i+1).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"></div>         
-	            <p class="mart"><%=list.get(i+1).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+            <a href=<%=list.get(i+1).getLink() %>><input type="text" name="link" value="<%=list.get(i+1).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+1).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i+1).getMartName()%><input type="text" name="martName" value="<%=list.get(i+1).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i+1).getProdName()%><input type="text" name="prodName" value="<%=list.get(i+1).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i+1).getProdPrice()%>" style="display: none;"><%=list.get(i+1).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p>
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
-            <a href=<%=list.get(i+2).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"></div>
-	            <p class="mart"><%=list.get(i+2).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+            <a href=<%=list.get(i+2).getLink() %>><input type="text" name="link" value="<%=list.get(i+2).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+2).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i+2).getMartName()%><input type="text" name="martName" value="<%=list.get(i+2).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i+2).getProdName()%><input type="text" name="prodName" value="<%=list.get(i+2).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i+2).getProdPrice()%>" style="display: none;"><%=list.get(i+2).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p>
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
           </div>
       </section>
 		      <%	}
@@ -118,35 +124,41 @@
       <section id="main_container">
           <div class="main_contents2">
             <div class="main_item" >
-           		<a href=<%=list.get(i).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);"></div>           
-	            <p class="mart"><%=list.get(i).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+           	<a href=<%=list.get(i).getLink()%>><input type="text" name="link" value="<%=list.get(i).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i).getMartName()%><input type="text" name="martName" value="<%=list.get(i).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i).getProdName()%><input type="text" name="prodName" value="<%=list.get(i).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i).getProdPrice()%>" style="display: none;"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p>
-	       		</a>
+	       	</a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
-            <a href=<%=list.get(i+1).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"></div>         
-	            <p class="mart"><%=list.get(i+1).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+            <a href=<%=list.get(i+1).getLink() %>><input type="text" name="link" value="<%=list.get(i+1).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+1).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i+1).getMartName()%><input type="text" name="martName" value="<%=list.get(i+1).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i+1).getProdName()%><input type="text" name="prodName" value="<%=list.get(i+1).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i+1).getProdPrice()%>" style="display: none;"><%=list.get(i+1).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p>
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
-            <a href=<%=list.get(i+2).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"></div>
-	            <p class="mart"><%=list.get(i+2).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+            <a href=<%=list.get(i+2).getLink() %>><input type="text" name="link" value="<%=list.get(i+2).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+2).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i+2).getMartName()%><input type="text" name="martName" value="<%=list.get(i+2).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i+2).getProdName()%><input type="text" name="prodName" value="<%=list.get(i+2).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i+2).getProdPrice()%>" style="display: none;"><%=list.get(i+2).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p>
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
           </div>
       </section>
 	      <% }
@@ -156,35 +168,41 @@
       <section id="main_container">
           <div class="main_contents2">
             <div class="main_item" >
-           		<a href=<%=list.get(i).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);"></div>           
-	            <p class="mart"><%=list.get(i).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+           	<a href=<%=list.get(i).getLink()%>><input type="text" name="link" value="<%=list.get(i).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i).getMartName()%><input type="text" name="martName" value="<%=list.get(i).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i).getProdName()%><input type="text" name="prodName" value="<%=list.get(i).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i).getProdPrice()%>" style="display: none;"><%=list.get(i).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i).getProdReview()%>개)</span></p>
-	       		</a>
+	       	</a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
-            <a href=<%=list.get(i+1).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"></div>         
-	            <p class="mart"><%=list.get(i+1).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i+1).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i+1).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+            <a href=<%=list.get(i+1).getLink() %>><input type="text" name="link" value="<%=list.get(i+1).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+1).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i+1).getMartName()%><input type="text" name="martName" value="<%=list.get(i+1).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i+1).getProdName()%><input type="text" name="prodName" value="<%=list.get(i+1).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i+1).getProdPrice()%>" style="display: none;"><%=list.get(i+1).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+1).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i+1).getProdReview()%>개)</span></p>
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
-            <a href=<%=list.get(i+2).getLink() %>>
-	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"></div>
-	            <p class="mart"><%=list.get(i+2).getMartName()%></p>
-	            <p class="prodName"><%=list.get(i+2).getProdName()%></p>
-	            <p class="prodPrice"><%=list.get(i+2).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+            <a href=<%=list.get(i+2).getLink() %>><input type="text" name="link" value="<%=list.get(i+2).getLink()%>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+2).getProdImage()%>" style="display: none;"></div>           
+	            <p class="mart" ><%=list.get(i+2).getMartName()%><input type="text" name="martName" value="<%=list.get(i+2).getMartName()%>" style="display: none;"></p>
+	            <p class="prodName"><%=list.get(i+2).getProdName()%><input type="text" name="prodName" value="<%=list.get(i+2).getProdName()%>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=list.get(i+2).getProdPrice()%>" style="display: none;"><%=list.get(i+2).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"> <%=list.get(i+2).getProdStar()%>점</span>
 	            <span class="prodReview">(<%=list.get(i+2).getProdReview()%>개)</span></p>
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
           </div>
       </section>
       <% }}

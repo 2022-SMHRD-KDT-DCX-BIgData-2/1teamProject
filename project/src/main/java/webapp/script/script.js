@@ -85,3 +85,13 @@ let banner = setInterval(() => {
 }, 5000);
 //1000ms = 1초
 //업로드 확인
+
+function idcheck(){
+	const btnIdCheck = document.getElementById("btnIdCheck");
+	const userid = document.getElementById("userid");
+		if(userid == ''){
+			alert('아이디를 입력하세요');
+			userid.focus();
+			return false;
+		}
+}

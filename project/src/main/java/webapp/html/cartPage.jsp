@@ -38,33 +38,53 @@
 main{
  position:relative;
  top:250px;
- margin:0px auto;
+ margin: 0px 50px;
  width:800px;
  height:800px;
  text-align:left;
  }
 table {
  width: 100%;
- 
  text-align:center;
  margin-top:10px;
+}
+table tr{
+height:70px;
 }
 .line{
 border-bottom:1px solid gray;
 padding:5px;
 }
-
+img{
+width:70px;
+height:70px;
+}
 table td:nth-child(1){
 width:25px;
 }
 table td:nth-child(2){
-width:180px;
+width:100px;
 }
- #main_footer{
- display:absolute;
- bottom:0px;
- }
-  </style>
+table td:nth-child(3){
+width:70px;
+}
+table td:nth-child(4){
+width:350px;
+}
+table td:nth-child(5){
+width:150px;
+}
+table td:nth-child(6){
+width:100px;
+}
+table td:nth-child(7){
+width:50px;
+}
+#main_footer{
+display:absolute;
+bottom:0px;
+}
+</style>
   
   <%	
 //세션값에 들어있는 로그인 정보를 가져오는 로직
@@ -97,8 +117,8 @@ width:180px;
 	      		<td><%=list.get(i).getMartName() %></td> <!-- 마트이름 -->
 	      		<td><img src=<%=list.get(i).getProdImage() %>></td> <!-- 마트이미지 -->
 	      		<td><%=list.get(i).getProdName() %></td> <!-- 가격 -->
-	      		<td><%=list.get(i).getProdPrice() %></td> <!-- 가격 -->
-	      		<td><a href=<%=list.get(i).getLink() %>>상품링크</td> <!-- 가격 -->
+	      		<td><%=list.get(i).getProdPrice() %>원</td> <!-- 가격 -->
+	      		<td><a href=<%=list.get(i).getLink() %>>상세정보</td> <!-- 가격 -->
 	      		<input type="text" name="prodCode" value="<%=list.get(i).getProdCode() %>" style="display:none;">
 	      		<td><input type="button" value="제거"></td>
 	      	</tr>

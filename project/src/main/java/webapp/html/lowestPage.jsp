@@ -73,6 +73,7 @@
       <section id="main_container">
           <div class="main_contents2">
             <div class="main_item" >
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
            		<a href=<%=list.get(i).getLink() %>>
 	            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);"></div>           
 	            <p class="mart"><%=list.get(i).getMartName()%></p>
@@ -82,7 +83,9 @@
 	       		</a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
             <a href=<%=list.get(i+1).getLink() %>>
 	            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"></div>         
 	            <p class="mart"><%=list.get(i+1).getMartName()%></p>
@@ -92,7 +95,9 @@
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item" >
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
             <a href=<%=list.get(i+2).getLink() %>>
 	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"></div>
 	            <p class="mart"><%=list.get(i+2).getMartName()%></p>
@@ -102,6 +107,7 @@
             </a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
           </div>
       </section>
       <%	}
@@ -112,6 +118,7 @@
 		      <section id="main_container">
 		          <div class="main_contents2">
 		            <div class="main_item" >
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		           		<a href=<%=list.get(i).getLink() %>>
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);"></div>           
 			            <p class="mart"><%=list.get(i).getMartName()%></p>
@@ -121,7 +128,9 @@
 			       		</a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
+		            </form>
 		            <div class="main_item" >
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		            <a href=<%=list.get(i+1).getLink() %>>
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"></div>         
 			            <p class="mart"><%=list.get(i+1).getMartName()%></p>
@@ -131,7 +140,9 @@
 		            </a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
+		            </form>
 		            <div class="main_item" >
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		            <a href=<%=list.get(i+2).getLink() %>>
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"></div>
 			            <p class="mart"><%=list.get(i+2).getMartName()%></p>
@@ -141,6 +152,7 @@
 		            </a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
+		            </form>
 		          </div>
 		      </section>
 	      <% }
@@ -150,6 +162,7 @@
 		      <section id="main_container">
 		          <div class="main_contents2">
 		            <div class="main_item" >
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		           		<a href=<%=list.get(i).getLink() %>>
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i).getProdImage()%>);"></div>           
 			            <p class="mart"><%=list.get(i).getMartName()%></p>
@@ -159,7 +172,9 @@
 			       		</a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
+		            </form>
 		            <div class="main_item" >
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		            <a href=<%=list.get(i+1).getLink() %>>
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i+1).getProdImage()%>);"></div>         
 			            <p class="mart"><%=list.get(i+1).getMartName()%></p>
@@ -169,7 +184,9 @@
 		            </a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
+		            </form>
 		            <div class="main_item" >
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		            <a href=<%=list.get(i+2).getLink() %>>
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);"></div>
 			            <p class="mart"><%=list.get(i+2).getMartName()%></p>
@@ -179,6 +196,7 @@
 		            </a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
+		            </form>
 		          </div>
 		      </section>
       <% }}

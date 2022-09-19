@@ -71,34 +71,41 @@
           <div class="main_title"><%=title[j] %></div>
           <div class="main_contents">
             <div class="main_item">
-            	<a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
-	            <div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage()%>);"></div>
-	            <p class="mart"><%=dao.mainSug(randomlist[i]).getMartName()%><p>
-	            <p class="prodName"><%=dao.mainSug(randomlist[i]).getProdName()%><p>
-	            <p class="prodPrice"><%=dao.mainSug(randomlist[i]).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i]).getProdStar()%>점</span>
-	            <span class="prodReview">(<%=dao.mainSug(randomlist[i]).getProdReview()%>개)</span></p>
-	       		</a>
+            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+           	<a href=<%=dao.mainSug(randomlist[i]).getLink() %>><input type="text" name="link" value="<%=dao.mainSug(randomlist[i]).getLink() %>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i]).getProdImage() %>);" ><input type="text" name="prodImage" value="<%=dao.mainSug(randomlist[i]).getProdImage() %>" style="display: none;"></div>           
+	            <p class="mart" ><%=dao.mainSug(randomlist[i]).getMartName() %><input type="text" name="martName" value="<%=dao.mainSug(randomlist[i]).getMartName() %>" style="display: none;"></p>
+	            <p class="prodName"><%=dao.mainSug(randomlist[i]).getProdName() %><input type="text" name="prodName" value="<%=dao.mainSug(randomlist[i]).getProdName() %>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=dao.mainSug(randomlist[i]).getProdPrice() %>" style="display: none;"><%=dao.mainSug(randomlist[i]).getProdPrice() %>원&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i]).getProdPrice() %>점</span>
+	            <span class="prodReview">(<%=dao.mainSug(randomlist[i]).getProdReview() %>개)</span></p>
+	       	</a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
             <div class="main_item">
-            	<a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
-	            <div  class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage()%>);"></div>
-	            <p class="mart"><%=dao.mainSug(randomlist[i+1]).getMartName()%><p>
-	            <p class="prodName"><%=dao.mainSug(randomlist[i+1]).getProdName()%><p>
-	            <p class="prodPrice"><%=dao.mainSug(randomlist[i+1]).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i]).getProdStar()%>점</span>
-	            <span class="prodReview">(<%=dao.mainSug(randomlist[i]).getProdReview()%>개)</span></p>
-	       		</a>
+            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+           	<a href=<%=dao.mainSug(randomlist[i+1]).getLink() %>><input type="text" name="link" value="<%=dao.mainSug(randomlist[i+1]).getLink() %>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+1]).getProdImage() %>);" ><input type="text" name="prodImage" value="<%=dao.mainSug(randomlist[i+1]).getProdImage() %>" style="display: none;"></div>           
+	            <p class="mart" ><%=dao.mainSug(randomlist[i+1]).getMartName() %><input type="text" name="martName" value="<%=dao.mainSug(randomlist[i+1]).getMartName() %>" style="display: none;"></p>
+	            <p class="prodName"><%=dao.mainSug(randomlist[i+1]).getProdName() %><input type="text" name="prodName" value="<%=dao.mainSug(randomlist[i+1]).getProdName() %>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=dao.mainSug(randomlist[i+1]).getProdPrice() %>" style="display: none;"><%=dao.mainSug(randomlist[i+1]).getProdPrice() %>원&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i+1]).getProdPrice() %>점</span>
+	            <span class="prodReview">(<%=dao.mainSug(randomlist[i+1]).getProdReview() %>개)</span></p>
+	       	</a>
             </div>
             <%@ include file="../html/button.jsp" %>
-            <div class="main_item"><a href=<%=dao.mainSug(randomlist[i]).getLink() %>>
-            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage()%>);"></div>
-            <p class="mart"><%=dao.mainSug(randomlist[i+2]).getMartName()%><p>
-            <p class="prodName"><%=dao.mainSug(randomlist[i+2]).getProdName()%><p>
-            <p class="prodPrice"><%=dao.mainSug(randomlist[i+2]).getProdPrice()%>원&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i]).getProdStar()%>점</span>
-            <span class="prodReview">(<%=dao.mainSug(randomlist[i]).getProdReview()%>개)</span></p>
-            </a>
+            </form>
+            <div class="main_item">
+            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+           	<a href=<%=dao.mainSug(randomlist[i+2]).getLink() %>><input type="text" name="link" value="<%=dao.mainSug(randomlist[i+2]).getLink() %>" style="display: none;">
+	            <div class = "prodImg" style="background-image: url(<%=dao.mainSug(randomlist[i+2]).getProdImage() %>);" ><input type="text" name="prodImage" value="<%=dao.mainSug(randomlist[i+2]).getProdImage() %>" style="display: none;"></div>           
+	            <p class="mart" ><%=dao.mainSug(randomlist[i+2]).getMartName() %><input type="text" name="martName" value="<%=dao.mainSug(randomlist[i+2]).getMartName() %>" style="display: none;"></p>
+	            <p class="prodName"><%=dao.mainSug(randomlist[i+2]).getProdName() %><input type="text" name="prodName" value="<%=dao.mainSug(randomlist[i+2]).getProdName() %>" style="display: none;"></p>
+	            <p class="prodPrice"><input type="text"  name="prodPrice" value="<%=dao.mainSug(randomlist[i+2]).getProdPrice() %>" style="display: none;"><%=dao.mainSug(randomlist[i+2]).getProdPrice() %>원&nbsp;&nbsp;<span class="prodReview"><%=dao.mainSug(randomlist[i+2]).getProdPrice() %>점</span>
+	            <span class="prodReview">(<%=dao.mainSug(randomlist[i+2]).getProdReview() %>개)</span></p>
+	       	</a>
             </div>
             <%@ include file="../html/button.jsp" %>
+            </form>
           </div>
       </section>
       <%

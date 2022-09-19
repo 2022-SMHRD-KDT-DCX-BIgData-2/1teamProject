@@ -9,6 +9,7 @@ public class CartDTO {
 	private int prodPrice;
 	private String link;
 	private int prodCode;
+	
 	public String getUserid() {
 		return userid;
 	}
