@@ -86,7 +86,7 @@ width:180px;
       <div id="header"></div>
     </header>
     <main>
-	 <div id = "martbox"  style="overflow:scroll; width:350px; height:200px;">
+	 <div id = "martbox"  style="overflow:scroll; width:1440px; height:500px;">
 	 
 	   	<div class="line" >관심상품목록</div>
 	    <table>

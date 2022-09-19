@@ -28,7 +28,7 @@ public class CartDAO {
 	}
 	
 	public int add(String userId, String martName, String prodImage,String prodName,int prodPrice, String link ) {
-		String SQL = "INSERT INTO cart VALUES (?,?,?,?,?,?)";
+		String SQL = "INSERT INTO cart VALUES (null,?,?,?,?,?,?)";
 		
 		try {
 			pstmt = conn.prepareStatement(SQL); 
@@ -53,13 +53,14 @@ public class CartDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				CartDTO dto = new CartDTO();
-				dto.setUserid(rs.getString(1));
-				dto.setMartName(rs.getString(2));
-				dto.setProdImage(rs.getString(3));
-				dto.setProdName(rs.getString(4));
-				dto.setProdPrice(rs.getInt(5));
-				dto.setLink(rs.getString(6));
-				dto.setProdCode(rs.getInt(7));
+				dto.setProdCode(rs.getInt(1));
+				dto.setUserid(rs.getString(2));
+				dto.setMartName(rs.getString(3));
+				dto.setProdImage(rs.getString(4));
+				dto.setProdName(rs.getString(5));
+				dto.setProdPrice(rs.getInt(6));
+				dto.setLink(rs.getString(7));
+				
 				list.add(dto);
 			}
 		}catch(Exception e) {
