@@ -41,21 +41,34 @@ font-family:FontAwesome;
 	font-size:10px;
 	color:red;
 }
+input[type=submit]{
+background-color:white;
+border:1px solid gray;
+border-radius:3px;
+padding:2px 2px;
+}
+
 table td{
 font-size:10px;
+padding:3px;
 }
 table td:nth-child(1){
 font-size:7px;
 width:45px;
 color:blue;
 }
+table td:nth-child(2){
+font-size:7px;
+width:170px;
+}
 table td:nth-child(3){
 font-size:7px;
 font-weight:bold;
-width:40px;
+width:48px;
 }
 .deleteBtn{
 background-color:white;
+padding: 0px 2px;
 }
 </style>
   <%	
@@ -92,9 +105,8 @@ background-color:white;
 	      	<% }
 	    }else{%>
 	    <tr>
-	      		<td>로그인이 필요한 서비스입니다.</td>
-	      		
-	      	</tr>
+      		<td style="width:300px; font-size:16px; text-align:center;">로그인이 필요한 서비스입니다.</td>		
+      	</tr>
 	    <%} %>
 	    </table>
 		

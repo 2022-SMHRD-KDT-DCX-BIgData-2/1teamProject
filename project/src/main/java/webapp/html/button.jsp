@@ -14,8 +14,9 @@ top:278px;
 border-radius:50%;
 font-size:20px;
 height:2em;
-width:2em;
+width:2.5em;
 background-color:white;
+border:1px solid gray;
 }
 button:hover{
 color:orange;

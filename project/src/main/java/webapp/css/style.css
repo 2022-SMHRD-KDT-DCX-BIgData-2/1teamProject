@@ -336,7 +336,7 @@ header {
   font-weight: 600;
   position: fixed;
   right: 48px;
-  top: 750px;
+  top: 600px;
   cursor: pointer;
   opacity: 0;
   transition: all 1s;
