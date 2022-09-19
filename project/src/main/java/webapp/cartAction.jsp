@@ -43,15 +43,12 @@
 	
 	CartDAO cart = new CartDAO();
 	int result = cart.add(userid, dto.getMartName(), dto.getProdImage(), dto.getProdName(), dto.getProdPrice(), dto.getLink());
-	
+	String url = request.getHeader("referer");
 	if(result != -1)
 	{
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-
-		script.println("history.back();");
-		
-		script.println("opener.location.reload();");
+		script.println("location.href= '"+url+"'");
 		script.println("</script>");
 	}else{
 		PrintWriter script = response.getWriter();

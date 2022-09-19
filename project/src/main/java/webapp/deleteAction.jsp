@@ -20,13 +20,14 @@
 <%
 CartDAO dao = new CartDAO();
 CartDTO dto = new CartDTO();
+String url = request.getHeader("referer");
 int prodCode = Integer.parseInt(request.getParameter("prodCode"));
  dto.setProdCode(prodCode);
 int result = dao.delete(dto.getProdCode());
 if(result != -1){
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
-	script.println("location.href='./html/cartPage.jsp'");
+	script.println("location.href='"+url+"'");
 	script.println("</script>");
 }
 
