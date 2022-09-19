@@ -8,8 +8,7 @@ public class CartDTO {
 	private String prodName;
 	private int prodPrice;
 	private String link;
-	
-	
+	private int prodCode;
 	public String getUserid() {
 		return userid;
 	}
@@ -27,6 +26,9 @@ public class CartDTO {
 	}
 	public String getLink() {
 		return link;
+	}
+	public int getProdCode() {
+		return prodCode;
 	}
 	public void setUserid(String userid) {
 		this.userid = userid;
@@ -46,7 +48,10 @@ public class CartDTO {
 	public void setLink(String link) {
 		this.link = link;
 	}
+	public void setProdCode(int prodCode) {
+		this.prodCode = prodCode;
+	}
 	
-
+	
 	
 }

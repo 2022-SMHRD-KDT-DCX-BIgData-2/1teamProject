@@ -99,6 +99,7 @@ width:180px;
 	      		<td><%=list.get(i).getProdName() %></td> <!-- 가격 -->
 	      		<td><%=list.get(i).getProdPrice() %></td> <!-- 가격 -->
 	      		<td><a href=<%=list.get(i).getLink() %>>상품링크</td> <!-- 가격 -->
+	      		<input type="text" name="prodCode" value="<%=list.get(i).getProdCode() %>" style="display:none;">
 	      		<td><input type="button" value="제거"></td>
 	      	</tr>
 	      	<% }%>

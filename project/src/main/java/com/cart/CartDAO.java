@@ -59,6 +59,7 @@ public class CartDAO {
 				dto.setProdName(rs.getString(4));
 				dto.setProdPrice(rs.getInt(5));
 				dto.setLink(rs.getString(6));
+				dto.setProdCode(rs.getInt(7));
 				list.add(dto);
 			}
 		}catch(Exception e) {
