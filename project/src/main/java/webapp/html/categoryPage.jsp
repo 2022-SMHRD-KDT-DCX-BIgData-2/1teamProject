@@ -7,6 +7,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%
+	String userid2 = null;
+	if(session.getAttribute("userid") != null ){
+		userid2 = (String)session.getAttribute("userid");
+	}
 	String categoryName = null;
 	if(request.getParameter("categoryName")!=null){
 		categoryName = (String)request.getParameter("categoryName");
@@ -52,7 +56,10 @@
         <div class="main_title3"><%=categoryName %></div>
       </div>
     </main>
-<%@ include file="../html/cart.jsp" %>
+  
+    	<%@ include file="../html/cart.jsp" %>
+  
+
   
      <% ProductDAO dao = new ProductDAO();
      	ArrayList<ProductDTO> list = dao.productList(categoryName);

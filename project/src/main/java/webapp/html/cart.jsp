@@ -1,19 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%request.setCharacterEncoding("UTF-8"); %>
+<%@ page import="java.util.*" %>
+<%@page import="com.product.ProductDAO" %>
+<%@page import="com.product.ProductDTO" %>
+<%@page import="com.client.MemberDTO" %>
+<%@page import="com.client.MemberDAO" %>
+<%@page import="com.cart.CartDAO" %>
+<%@page import="com.cart.CartDTO" %>
+<%@page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관심상품</title>
 </head>
+<script src="https://kit.fontawesome.com/20629bba5a.js" crossorigin="anonymous"></script>
 <style>
+input[type:"submit"]{
+font-family:FontAwesome;
+}
 #cartitem{
 	position:fixed;
 	z-index:1020;
 	border:2px solid lightgray;
 	border-radius:20px;
-	height:300px;
-	width:290px;
+	height:330px;
+	width:300px;
 	right:50px;
 	padding: 10px;
 	background-color:white;
@@ -28,18 +41,58 @@
 	font-size:10px;
 	color:red;
 }
+table td{
+font-size:10px;
+}
+table td:nth-child(1){
+font-size:7px;
+width:45px;
+color:blue;
+}
+table td:nth-child(3){
+font-size:7px;
+font-weight:bold;
+width:40px;
+}
+.deleteBtn{
+background-color:white;
+}
 </style>
-<body>
-	<div id = "cartitem">
-		<div class="item"><i class="fa-solid fa-heart like"></i> 관심상품 <i class="fa-solid fa-heart like"></i></div>
-		<table>
-			<tr>
-				<td>1</td>
-				<td><input type="checkbox" name = "item" class = "checkbox"></td>
-			</tr>
+  <%	
+//세션값에 들어있는 로그인 정보를 가져오는 로직
+	String userid = null;
+	if(session.getAttribute("userid") != null ){
+		userid = (String)session.getAttribute("userid");
+	}
+	CartDAO dao2 = new CartDAO();
+	ArrayList<CartDTO> list2 = dao2.cartlist(userid);
 	
-		</table>
-		<div>총 금액 : </div>
+%>
+<body>
+	<div id = "cartitem" style="overflow:scroll; width:290ㅔㅌ; height:300px;">
+		<div class="item"><i class="fa-solid fa-heart like"></i> 관심상품 <i class="fa-solid fa-heart like"></i></div>
+	    <table>
+	    <%if(userid != null){
+	    for(int i = 0 ; i <list2.size();i++ ){
+	    	%>
+	      	<tr>
+	      		<td><%=list2.get(i).getMartName() %></td> <!-- 마트이름 -->
+	      		<td><%=list2.get(i).getProdName() %></td> <!-- 가격 -->
+	      		<td><%=list2.get(i).getProdPrice() %>원</td> 
+	      		<form action= "../deleteAction.jsp" method="post">
+	      		<input type="text" name="prodCode" value="<%=list2.get(i).getProdCode() %>" style="display:none;">
+	      		<td><input type="submit" class="deleteBtn" name = "delete" value="x"></td>
+	      		</form>
+	      	</tr>
+	      	<% }
+	    }else{%>
+	    <tr>
+	      		<td>로그인이 필요한 서비스입니다.</td>
+	      		
+	      	</tr>
+	    <%} %>
+	    </table>
+		
 	</div>
 </body>
 </html>

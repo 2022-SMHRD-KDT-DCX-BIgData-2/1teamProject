@@ -48,13 +48,15 @@
 	{
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('상품이 관심상품목록에 추가됬습니다')");
-		script.println("history.back()");
+
+		script.println("history.back();");
+		
+		script.println("opener.location.reload();");
 		script.println("</script>");
 	}else{
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('오류가 있습니다 확인해주세요 ')");
+		script.println("alert('오류가 있습니다. 확인해주세요 ')");
 		script.println("history.back()");
 		script.println("</script>");
 	}

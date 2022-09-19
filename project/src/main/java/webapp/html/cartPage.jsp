@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%request.setCharacterEncoding("UTF-8"); %>
-       <%@ page import="java.util.*" %>
-    <%@page import="com.product.ProductDAO" %>
-    <%@page import="com.product.ProductDTO" %>
-    <%@page import="com.client.MemberDTO" %>
-    <%@page import="com.client.MemberDAO" %>
-    <%@page import="com.cart.CartDAO" %>
-    <%@page import="com.cart.CartDTO" %>
-    <%@page import="java.io.PrintWriter" %>
+<%request.setCharacterEncoding("UTF-8"); %>
+<%@ page import="java.util.*" %>
+<%@page import="com.product.ProductDAO" %>
+<%@page import="com.product.ProductDTO" %>
+<%@page import="com.client.MemberDTO" %>
+<%@page import="com.client.MemberDAO" %>
+<%@page import="com.cart.CartDAO" %>
+<%@page import="com.cart.CartDTO" %>
+<%@page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -113,14 +113,16 @@ bottom:0px;
 	    <%for(int i = 0 ; i <list.size();i++ ){
 	    	%>
 	      	<tr>
-	      		<td><input type="checkbox"></td>
+	      		<td><%=i+1 %></td>
 	      		<td><%=list.get(i).getMartName() %></td> <!-- 마트이름 -->
 	      		<td><img src=<%=list.get(i).getProdImage() %>></td> <!-- 마트이미지 -->
 	      		<td><%=list.get(i).getProdName() %></td> <!-- 가격 -->
 	      		<td><%=list.get(i).getProdPrice() %>원</td> <!-- 가격 -->
 	      		<td><a href=<%=list.get(i).getLink() %>>상세정보</td> <!-- 가격 -->
+	      		<form action="../deleteAction.jsp" method="post">
 	      		<input type="text" name="prodCode" value="<%=list.get(i).getProdCode() %>" style="display:none;">
-	      		<td><input type="button" value="제거"></td>
+	      		<td><input type="submit" value="제거" name="delete"></td>
+	      		</form>
 	      	</tr>
 	      	<% }%>
 	    </table>

@@ -68,19 +68,18 @@ public class CartDAO {
 		}
 		return list;
 	}
-	public int delete(CartDTO dto) {
-		String SQL = "DELETE * FROM cart WHERE userid=?";
+
+	
+	public int delete(int prodCode){
+		String SQL = "delete from cart where prodCode=?";
 		try {
-			pstmt = conn.prepareStatement(SQL); 
-	        pstmt.setString(1, dto.getUserid());
-	        pstmt.setString(2, dto.getMartName());
-	        pstmt.setString(3, dto.getProdImage());
-	        pstmt.setString(4, dto.getProdName());
-	        pstmt.setInt(5, dto.getProdPrice()); 
-	        return pstmt.executeUpdate();
-		}catch (Exception e) {
-	    	  e.printStackTrace();
-	      }
-	      return -1;
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1 , prodCode);
+			return pstmt.executeUpdate();
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 }
