@@ -70,17 +70,15 @@ public class CartDAO {
 	}
 	
 	//마트 가격
-	public int martPrice(int prodPrice){
+	public int martPrice(String userid, String martName){
 		String SQL = "select sum(prodPrice) from cart where userid = ? and martName = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1 , prodPrice);
+			pstmt.setString(1 , userid);
+			pstmt.setString(2 , martName);
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				CartDTO dto = new CartDTO();
-				dto.setProdPrice(rs.getInt(1));
-				dto.setUserid(rs.getString(2));
-				dto.setMartName(rs.getString(3));
+			if(rs.next()) {
+				return rs.getInt(1);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

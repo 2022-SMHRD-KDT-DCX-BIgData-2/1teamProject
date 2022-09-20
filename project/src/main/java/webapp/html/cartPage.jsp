@@ -192,15 +192,15 @@ padding:8px 15px;
 		</tr>
 		<tr>
 			<td style="width:100px;padding: 2px">롯데마트</td>
-			<td></td>
+			<td><%=dao.martPrice(userid, "롯데마트") %></td>
 		</tr>
 		<tr>
 			<td style="width:100px;padding: 2px">이마트</td>
-			<td></td>
+			<td><%=dao.martPrice(userid, "이마트") %></td>
 		</tr>
 		<tr>
 			<td style="width:100px;padding: 2px">홈플러스</td>
-			<td></td>
+			<td><%=dao.martPrice(userid, "홈플러스") %></td>
 		</tr>
 	</table>
 	</div>
