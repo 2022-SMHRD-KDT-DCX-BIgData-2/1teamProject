@@ -33,21 +33,6 @@ addEventListener("scroll", () => {
   
   }
 });
-/**
- * 배너 동작 로직
- */
-const bannerBox = document.querySelector("#bannerBox > ul");
-const bannerItem = document.querySelectorAll(".banner_item");
-//배열 반환
-
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-
-const size = bannerItem[0].clientWidth;
-//패딩을 포함한 넓이를 가지고오는 기능
-//해당 요소의 길이를 가지고 온다
-let counter = 0;
-
 // addEventListener
 // 이벤트를 동작시킵니다
 
@@ -85,13 +70,3 @@ let banner = setInterval(() => {
 }, 5000);
 //1000ms = 1초
 //업로드 확인
-
-function idcheck(){
-	const btnIdCheck = document.getElementById("btnIdCheck");
-	const userid = document.getElementById("userid");
-		if(userid == ''){
-			alert('아이디를 입력하세요');
-			userid.focus();
-			return false;
-		}
-}

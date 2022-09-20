@@ -83,11 +83,9 @@
             <a href="categoryPage.jsp?categoryName=과자/간식/시리얼/떡"><li><div class="add_menu">과자/간식/시리얼/떡</div></li></a>
             <a href="categoryPage.jsp?categoryName=생수/음료/커피/차/주류"><li><div class="add_menu">생수/음료/커피/차/주류</div></li></a>
             <a href="categoryPage.jsp?categoryName=라면/통조림/즉석식품"><li><div class="add_menu">라면/통조림/즉석식품</div></li></a>
-            <a href="categoryPage.jsp?categoryName=건강식품"><li><div class="add_menu">건강식품</div></li></a>
-            
+            <a href="categoryPage.jsp?categoryName=건강식품"><li><div class="add_menu">건강식품</div></li></a>  
         </ul>
         </div>
- 
       </header>
   <script src="../script/script.js"></script>
 </body>

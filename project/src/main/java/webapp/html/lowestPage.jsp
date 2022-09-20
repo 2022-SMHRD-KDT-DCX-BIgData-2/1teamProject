@@ -83,7 +83,7 @@
 	       	</a>
             </div>
             <%@ include file="../html/button.jsp" %>
-            </form>
+            </form> 
             <div class="main_item" >
             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
             <a href=<%=list.get(i+1).getLink() %>><input type="text" name="link" value="<%=list.get(i+1).getLink()%>" style="display: none;">
@@ -98,6 +98,7 @@
             </form>
             <div class="main_item" >
             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
             <a href=<%=list.get(i+2).getLink() %>><input type="text" name="link" value="<%=list.get(i+2).getLink()%>" style="display: none;">
 	            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+2).getProdImage()%>" style="display: none;"></div>           
 	            <p class="mart" ><%=list.get(i+2).getMartName()%><input type="text" name="martName" value="<%=list.get(i+2).getMartName()%>" style="display: none;"></p>
@@ -128,7 +129,7 @@
 			       	</a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
-		            </form>
+		            </form> 
 		            <div class="main_item" >
 		            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		            <a href=<%=list.get(i+1).getLink() %>><input type="text" name="link" value="<%=list.get(i+1).getLink()%>" style="display: none;">
@@ -142,7 +143,11 @@
 		            <%@ include file="../html/button.jsp" %>
 		            </form>
 		            <div class="main_item" >
+<<<<<<< HEAD
 		            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+=======
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+>>>>>>> refs/remotes/origin/main
 		            <a href=<%=list.get(i+2).getLink() %>><input type="text" name="link" value="<%=list.get(i+2).getLink()%>" style="display: none;">
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+2).getProdImage()%>" style="display: none;"></div>           
 			            <p class="mart" ><%=list.get(i+2).getMartName()%><input type="text" name="martName" value="<%=list.get(i+2).getMartName()%>" style="display: none;"></p>
@@ -159,7 +164,7 @@
 	    	}
 	    else{
     	  for(int i = (pageint-1)*100 ; i< ((pageint-1)*100)+97;i+=3){%>
-		      <section id="main_container">
+		     <section id="main_container">
 		          <div class="main_contents2">
 		            <div class="main_item" >
 		            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
@@ -172,7 +177,7 @@
 			       	</a>
 		            </div>
 		            <%@ include file="../html/button.jsp" %>
-		            </form>
+		            </form> 
 		            <div class="main_item" >
 		            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
 		            <a href=<%=list.get(i+1).getLink() %>><input type="text" name="link" value="<%=list.get(i+1).getLink()%>" style="display: none;">
@@ -186,7 +191,11 @@
 		            <%@ include file="../html/button.jsp" %>
 		            </form>
 		            <div class="main_item" >
+<<<<<<< HEAD
 		            <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+=======
+		             <form name = "addForm" onsubmit="return confirm('상품을 관심상품에 추가하시겠습니까?')" action="../cartAction.jsp" method="post">
+>>>>>>> refs/remotes/origin/main
 		            <a href=<%=list.get(i+2).getLink() %>><input type="text" name="link" value="<%=list.get(i+2).getLink()%>" style="display: none;">
 			            <div class = "prodImg" style="background-image: url(<%=list.get(i+2).getProdImage()%>);" ><input type="text" name="prodImage" value="<%=list.get(i+2).getProdImage()%>" style="display: none;"></div>           
 			            <p class="mart" ><%=list.get(i+2).getMartName()%><input type="text" name="martName" value="<%=list.get(i+2).getMartName()%>" style="display: none;"></p>

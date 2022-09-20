@@ -44,7 +44,7 @@ border:1px solid lightgray;
 border-radius:5px;
 padding: 5px;
 }
-main{
+#mainbox2{
  position:relative;
  top:250px;
  margin-left:160px;
@@ -52,7 +52,7 @@ main{
  text-align:left;
  display:flex;
  }
-table {
+#carttable {
  text-align:center;
  margin-top:10px;
  border-collapse:collapse;
@@ -128,6 +128,9 @@ font-size:1px;
 font-weight:bold;
 padding:8px 15px;
 }
+.text{
+padding:15px;
+}
 </style>
   
   <%	
@@ -149,11 +152,11 @@ padding:8px 15px;
     <header>
       <div id="header"></div>
     </header>
-    <main>
+    <main id="mainbox2">
 	 <div id = "martbox"  style="overflow:scroll; width:900px; height:500px;">
 	 
 	   	<div class="line" >관심상품목록</div>
-	    <table>
+	    <table id="carttable">
 	    <%for(int i = 0 ; i <list.size();i++ ){
 	    	%>
 	      	<tr>
@@ -172,7 +175,7 @@ padding:8px 15px;
 	    </table>
 	  </div> 
     <div class="addbox">
-    <div style="padding:15px;">배송지 &nbsp;<i class="fa-solid fa-location-dot"></i></div>
+    <div class="text">배송지 &nbsp;<i class="fa-solid fa-location-dot"></i></div>
     <ul>
    		<li>
    			<input type = "text" name = "zipCode" id = "postcode" placeholder = "우편번호"/>
@@ -183,7 +186,7 @@ padding:8px 15px;
    			<input type = "text" name = "userAddr3" id = "extraAddress" size = "48" placeholder = "참고항목"/>
    			<input type = "text" name = "userAddr2" id = "detailAddress" size = "45" placeholder = "상세주소"/>
    		</li>
-   	<div style="padding:15px;">전체금액 &nbsp;<i class="fa-solid fa-wallet"></i></div>
+   	<div class="text">전체금액 &nbsp;<i class="fa-solid fa-wallet"></i></div>
    	<div style="margin:0px 32px;">
 	<table style="text-align:center;">
 		<tr>

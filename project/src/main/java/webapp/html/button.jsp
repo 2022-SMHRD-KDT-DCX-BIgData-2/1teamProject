@@ -17,10 +17,10 @@ height:2em;
 width:2em;
 background-color:white;
 border:1px solid lightgray;
-color:tomato;
+color:black;
 }
 button:hover{
-color:darkorange;
+color:tomato;
 }
 </style>
 <body>

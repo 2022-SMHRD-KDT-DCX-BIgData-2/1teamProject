@@ -51,21 +51,16 @@
     <header>
       <div id="header"></div>
     </header>
-    
     <main>
       <div id="main_box">
         <div class="main_title3"><%=categoryName %></div>
       </div>
     </main>
+    <%@ include file="../html/cart.jsp" %>
   
-    	<%@ include file="../html/cart.jsp" %>
-  
-
-  
-     <% ProductDAO dao = new ProductDAO();
-     	ArrayList<ProductDTO> list = dao.productList(categoryName);
-	      System.out.println(categoryName);
-		
+    <% ProductDAO dao = new ProductDAO();
+     ArrayList<ProductDTO> list = dao.productList(categoryName);
+	 System.out.println(categoryName);
 	   try{
 		   if(pageint == 1){  
 		    	int listlength = 0;

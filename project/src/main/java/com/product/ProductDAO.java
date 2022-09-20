@@ -208,7 +208,7 @@ public class ProductDAO {
 				+ ",if(emart.prodPrice <= lotte.prodPrice and emart.prodPrice <= homeplus.prodPrice, emart.prodReview,\n"
 				+ "if(lotte.prodPrice < emart.prodPrice and lotte.prodPrice < homeplus.prodPrice, lotte.prodReview,\n"
 				+ "if(homeplus.prodPrice < emart.prodPrice and homeplus.prodPrice < lotte.prodPrice, homeplus.prodReview,emart.prodReview))) as prodReview\n"
-				+ "from emart inner join lotte on emart.prodName=lotte.prodName inner join homeplus on lotte.prodName= homeplus.prodName;";
+				+ "from emart inner join lotte on emart.prodName=lotte.prodName inner join homeplus on lotte.prodName= homeplus.prodName order by rand();";
 		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
